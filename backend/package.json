@@ -1,0 +1,24 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "backend for Volta",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amancioandre/volta.git"
+  },
+  "keywords": [
+    "backend",
+    "ironhack",
+    "project"
+  ],
+  "author": "Andre Amancio, Gabriel Sicuto",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/amancioandre/volta/issues"
+  },
+  "homepage": "https://github.com/amancioandre/volta#readme"
+}
