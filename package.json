@@ -1,8 +1,8 @@
 {
-  "name": "backend",
+  "name": "volta",
   "version": "1.0.0",
-  "description": "backend for Volta",
-  "main": "app.js",
+  "description": "Volta Client Application, React",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,9 +11,13 @@
     "url": "git+https://github.com/amancioandre/volta.git"
   },
   "keywords": [
-    "backend",
-    "ironhack",
-    "project"
+    "volta",
+    "client",
+    "application",
+    "react",
+    "client",
+    "finding",
+    "homeless"
   ],
   "author": "Andre Amancio, Gabriel Sicuto",
   "license": "ISC",
