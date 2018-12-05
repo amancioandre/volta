@@ -1,0 +1,17 @@
+.Nav {
+  margin: 0;
+  padding: 15px 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 50px;
+  width: 100%;
+  font-size: 1.1rem;
+  background-color: white;
+  color: black;
+  /* box-shadow: -4px 4px rgba(0,0,0,0.5); */
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
