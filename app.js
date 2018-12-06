@@ -8,7 +8,8 @@ import Layout from './src/hoc/Layout/Layout';
 import Dashboard from './src/containers/Dashboard/Dashboard';
 import Landing from './src/components/Landing/Landing';
 import Signup from './src/components/Signup/Signup';
-import MapComponent from './src/containers/Map/Map';
+import SignIn from './src/components/SignIn/SignIn';
+import FormPerson from './src/components/Forms/FormPerson/FormPerson'
 
 
 const app = (props) => {
@@ -19,8 +20,8 @@ const app = (props) => {
           <Route exact path='/' component={Landing} />
           <Route exact path='/dashboard' component={Dashboard} />
           <Route exact path='/signup' component={Signup}/> 
-          <Route path='/login' render={() => <div>Login component goes here</div>} />
-          <Route exact path='/map' component={MapComponent} />
+          <Route exact path='/login' component={SignIn} />
+          <Route exact path='/person' component={FormPerson} />
         </Layout>
       </BrowserRouter>
     </Aux>
