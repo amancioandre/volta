@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import 'leaflet/dist/leaflet.css';
 import './app.css';
 
@@ -10,6 +10,8 @@ import Landing from './src/components/Landing/Landing';
 import Signup from './src/components/Signup/Signup';
 import SignIn from './src/components/SignIn/SignIn';
 import FormPerson from './src/components/Forms/FormPerson/FormPerson'
+import PeopleList from './src/containers/Dashboard/PeopleList/PeopleList';
+import Person from './src/containers/Dashboard/Person/Person';
 
 
 const app = (props) => {
@@ -17,11 +19,15 @@ const app = (props) => {
     <Aux>
       <BrowserRouter>
         <Layout>
-          <Route exact path='/' component={Landing} />
-          <Route exact path='/dashboard' component={Dashboard} />
-          <Route exact path='/signup' component={Signup}/> 
-          <Route exact path='/login' component={SignIn} />
-          <Route exact path='/person' component={FormPerson} />
+          <Switch>
+            <Route exact path='/' component={Landing} />
+            <Route exact path="/dashboard/people" component={PeopleList} />
+            <Route exact path='/dashboard' component={Dashboard} />
+            {/* <Route exact path="/dashboard/people/person" component={Person} /> */}
+            <Route exact path='/signup' component={Signup}/> 
+            <Route exact path='/login' component={SignIn} />
+            <Route exact path='/person' component={FormPerson} />
+          </Switch>
         </Layout>
       </BrowserRouter>
     </Aux>
