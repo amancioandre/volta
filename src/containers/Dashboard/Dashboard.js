@@ -23,7 +23,7 @@ class Dashboard extends Component {
   render() {
     return (
       <Aux>
-        Nada
+        <p>Nada</p>
       </Aux>
     )
   }

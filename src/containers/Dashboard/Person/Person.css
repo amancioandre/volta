@@ -1,0 +1,10 @@
+.Person {
+  height: 100vh;
+}
+
+.map-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 300px;
+}

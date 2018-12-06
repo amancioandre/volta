@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 
+import './Person.css';
+
 import Aux from '../../../hoc/Aux/Aux';
 import PrimaryInfo from '../../../components/Forms/FormBuildings/PrimaryInfo/PrimaryInfo';
 import SecundaryInfo from '../../../components/Forms/FormBuildings/SecundaryInfo/SecundaryInfo';
-
+import MapComponent from '../../Map/Map';
 
 class Person extends Component {
   constructor(props) {
@@ -59,6 +61,7 @@ class Person extends Component {
           <button onClick={this.showMoreHandler}>Icon</button>
           {/* Conditioned to Viewer Action */ }
           {this.state.showMore ? moreInfo : null}
+          <MapComponent c='map-bottom'/>
         </div>
       </div>
     )

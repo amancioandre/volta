@@ -47,7 +47,7 @@ class MapComponent extends Component {
 
     const position = [this.state.position.lat, this.state.position.lng];
     return (
-      <Map id="mapid" center={position} zoom={19}>
+      <Map id='mapid' className={this.props.c} center={position} zoom={19}>
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution="&copy; <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"

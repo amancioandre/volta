@@ -23,7 +23,7 @@ const app = (props) => {
             <Route exact path='/' component={Landing} />
             <Route exact path="/dashboard/people" component={PeopleList} />
             <Route exact path='/dashboard' component={Dashboard} />
-            {/* <Route exact path="/dashboard/people/person" component={Person} /> */}
+            <Route exact path="/dashboard/people/person" component={Person} />
             <Route exact path='/signup' component={Signup}/> 
             <Route exact path='/login' component={SignIn} />
             <Route exact path='/person' component={FormPerson} />
