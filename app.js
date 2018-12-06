@@ -8,6 +8,9 @@ import Layout from './src/hoc/Layout/Layout';
 import Dashboard from './src/containers/Dashboard/Dashboard';
 import Landing from './src/components/Landing/Landing';
 import Signup from './src/components/Signup/Signup';
+import SignIn from './src/components/SignIn/SignIn';
+import FormPerson from './src/components/Forms/FormPerson/FormPerson'
+
 
 const app = (props) => {
   return (
@@ -17,7 +20,8 @@ const app = (props) => {
           <Route exact path='/' component={Landing} />
           <Route exact path='/dashboard' component={Dashboard} />
           <Route exact path='/signup' render={() => <Signup/>}/> 
-          <Route path='/login' render={() => <div>Login component goes here</div>} />
+          <Route exact path='/login' render={() => <SignIn/>} />
+          <Route exact path='/person' render={() => <FormPerson/>} />
         </Layout>
       </BrowserRouter>
     </Aux>
