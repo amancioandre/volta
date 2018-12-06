@@ -1,6 +1,8 @@
 /* Webpack Modules */
-const path = require('path'),
-      webpack = require('webpack');
+const path = require('path');
+
+      
+const webpack = require('webpack');
 
 /* Bundler */
 const bundlePath = path.resolve(__dirname, 'dist');
@@ -12,7 +14,7 @@ module.exports = {
     rules: [
       {
         test: /\.css$/,
-        use: [ 'style-loader', 'css-loader']
+        use: ['style-loader', 'css-loader'],
       },
       {
         test: /\.jsx?$/,
@@ -21,27 +23,29 @@ module.exports = {
           {
             loader: 'babel-loader',
             options: {
-              presets: ['react']
-            }
-          }
+              presets: ['react'],
+            },
+          },
         ],
-      }
-    ]
+      },
+    ],
   },
-  resolve: { extensions: ['*', '.js', '.jsx']},
+  resolve: { extensions: ['*', '.js', '.jsx'] },
   output: {
-    publicPath: bundlePath,
-    filename: 'bundle.js'
+    publicPath: '/',
+    filename: 'bundle.js',
   },
   devServer: {
     contentBase: path.join(__dirname, 'public'),
     port: 3000,
     publicPath: 'http://localhost:3000/dist',
-    hot: true
+    hot: true,
+    historyApiFallback: true,
   },
-  plugins: [ new webpack.HotModuleReplacementPlugin() ],
+  plugins: [new webpack.HotModuleReplacementPlugin()],
   mode: 'development',
   performance: {
-    hints: false
+    hints: false,
   },
-}
+
+};
