@@ -19,7 +19,11 @@ class Backdrop extends Component {
   render() {
     return (
       <div 
-        className="Backdrop">
+        className="Backdrop"
+        style={{
+          display: this.props.show ? 'block' : 'none'
+        }}
+        onClick={this.props.showBackdrop}>
       </div>
     )
   }

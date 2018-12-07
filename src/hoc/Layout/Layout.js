@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import Aux from '../Aux/Aux';
 import Nav from '../../components/Navigation/Nav';
 import Menu from '../../components/Menu/Menu';
+import Backdrop from '../../components/Backdrop/Backdrop';
 
 class Layout extends Component {
   constructor(props) {
@@ -16,16 +17,20 @@ class Layout extends Component {
 
   show() {
     this.setState({ show: !this.state.show })
+    console.log('backdrop clicked')
   }
 
   render() {
     return (
       <Aux>
         <Nav 
-          showMenu={this.show}/>
+          showMenu={this.show} />
         <Menu 
-          showMenu={this.state.show}/>
-        Nav, Menu, Backdrop
+          show={this.state.show} />
+        <Backdrop
+          show={this.state.show}
+          showBackdrop={this.show} /> 
+
         <main>
           {this.props.children}
         </main>
