@@ -19,8 +19,8 @@ class MapComponent extends Component {
     this.state = {
       show: false,
       position: {
-        lat: -23.561700,
-        lng: -46.660046,
+        lat: -23.561679,
+        lng: -46.660056,
       }
     };
 
@@ -32,9 +32,8 @@ class MapComponent extends Component {
     }
   }
   /* Document Map Methods */
-  createPin(props) {
-    const { lat, lng } = props.position
-    this.setState({ position: { lat, lng }});
+  updatePin(newPosition) {
+    this.setState({ position: newPosition })
   }
   
   /* Life Cycle Methods */
@@ -42,18 +41,26 @@ class MapComponent extends Component {
     console.log("inside componentDidMount -> MapComponent")
   }
 
+  componentWillUpdate() {
+    console.log('inside componentWillUpdate -> Map')
+  }
+
   render() {
 
     const position = [this.state.position.lat, this.state.position.lng];
     return (
-      <Map id='mapid' className={this.props.c} center={position} zoom={19}>
+      <Map 
+        id='mapid' 
+        className={this.props.c} 
+        center={this.props.position} 
+        zoom={18}>
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution="&copy; <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
         />
         <Marker 
           icon={this.icons.registeredPeople}
-          position={position}>
+          position={this.props.position ? this.props.position : position}>
           <Popup>A pretty CSS3 popup.<br />Easily customizable.</Popup>
         </Marker>
       </Map>

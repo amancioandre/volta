@@ -1,17 +1,29 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import './NavigationalItems.css';
 
 const navigationalItems = (props) => {
   return (
-    <div className=".NavigationalItems">
+    <div className="NavigationalItems">
       <ul>
-        <li>Cadastros</li>
-        <li>Desaparecidos</li>
-        <li>Mapa</li>
-        <li>Mensagens</li>
-        <li>Relatórios</li>
-        <li>Sobre</li>
+        <li>
+          <Link to=''>
+            <img src="/img/icons/registers.png" /> My registers
+          </Link>
+        </li>
+        <li>
+          <Link to=''>
+            <img src="/img/icons/missing.png" /> Missing
+          </Link>
+        </li>
+        <li>
+          <Link to=''>
+            <img src="/img/icons/map.png" /> Map
+          </Link>
+        </li>
+
+        <li>About</li>
         <li>Logout</li>
       </ul>
     </div>

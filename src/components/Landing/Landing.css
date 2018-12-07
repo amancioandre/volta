@@ -1,9 +1,8 @@
 .Landing {
   margin: 0;
   padding: 20px;
-  /* background-image: url('../../../public/img/manuel-cosentino-779709-unsplash.jpg') center no-repeat; */
   background-size: cover;
-  background-color: rgba(131, 182, 146, 1);
+  background-color: #F8D246;
   width: 100%;
   height: 100vh;
   display: flex;

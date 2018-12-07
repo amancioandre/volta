@@ -56,16 +56,5 @@
   background-color: white;
   box-shadow: 0px -2px 6px #464C55;
   border: none;
-}
-
-.Person .controls button {
-  margin: 0 5px;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  border: 2px solid #464C55;;
-  background-color: #F8BC14;
-  outline: none;
-  text-transform: uppercase;
-  font-weight: 800;
-}
+  border-bottom: 1px solid #464C55;
+} 
