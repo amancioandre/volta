@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-
 import Aux from '../../../hoc/Aux/Aux';
-
 import UserInfo from '../FormBuildings/UserInfo/UserInfo';
 import SubmitButton from '../FormBuildings/SubmitButton/SubmitButton';
+import { Form } from 'reactstrap';
+
 
 // CSS
 import './formSingIn.css';
@@ -27,10 +27,10 @@ class FormSignIn extends Component {
   render() {
     return(
     <Aux>
-      <form>
+      <Form>
         <UserInfo state = { this.state } change = { this.handleChange }/>
         <SubmitButton buttonName = 'Login'/>
-      </form>
+      </Form>
     </Aux>
     )
   }

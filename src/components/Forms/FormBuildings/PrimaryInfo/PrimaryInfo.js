@@ -1,17 +1,25 @@
 import React from 'react';
 import Aux from '../../../../hoc/Aux/Aux';
+import { Form, FormGroup, Label, Input, FormFeedback, FormText } from 'reactstrap';
+
 
 // CSS
 
 const PrimaryInfo = (props) => {
   return(
     <Aux>
-      <label>First Name:</label>
-      <input type="text" name="firstName" value={props.firstName} onChange={ e => props.change(e)}/>    
-      <label>Last Name:</label>
-      <input type="text" name="lastName" value={props.lastName} onChange={ e => props.change(e)}/>
-      <label>Date of birth:</label>
-      <input type="date" name="dateOfBirth" value={props.dateOfBirth} onChange={ e => props.change(e)}/> 
+      <FormGroup>
+        <Label>First Name:</Label>
+        <Input type="text" name="firstName" value={props.firstName} onChange={ e => props.change(e)}/>    
+      </FormGroup> 
+      <FormGroup>
+        <Label>Last Name:</Label>
+        <Input type="text" name="lastName" value={props.lastName} onChange={ e => props.change(e)}/>
+      </FormGroup> 
+      <FormGroup>
+        <Label>Date of birth:</Label>
+        <Input type="date" name="dateOfBirth" value={props.dateOfBirth} onChange={ e => props.change(e)}/>
+      </FormGroup> 
     </Aux>
   )
 }

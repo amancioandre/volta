@@ -8,6 +8,7 @@ import Background from '../FormBuildings/Background/Background';
 import Appearance from '../FormBuildings/Appearance/Appearance';
 import Health from '../FormBuildings/Health/Health';
 import Documents from '../FormBuildings/Documents/Documents';
+import { Form } from 'reactstrap';
 
 // CSS
 // import './FormSignUp.css';
@@ -31,7 +32,7 @@ class FormPerson extends Component {
   render() {
     return(
     <Aux>
-      <form>
+      <Form>
         <PrimaryInfo state = { this.state } change = { this.handleChange }/>
         <SecundaryInfo state = { this.state } change = { this.handleChange }/>
         <Background state = { this.state } change = { this.handleChange }/>
@@ -39,7 +40,7 @@ class FormPerson extends Component {
         <Health state = { this.state } change = { this.handleChange }/>
         <Documents state = { this.state } change = { this.handleChange }/>
         <SubmitButton buttonName = 'Create'/>
-      </form>
+      </Form>
     </Aux>
     )
   }
