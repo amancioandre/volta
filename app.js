@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, ProtectedRoute, Switch } from 'react-router-dom';
 import 'leaflet/dist/leaflet.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './app.css';
@@ -24,10 +24,10 @@ const app = (props) => {
             <Route exact path='/' component={Landing} />
             <Route exact path="/dashboard/people" component={PeopleList} />
             <Route exact path='/dashboard' component={Dashboard} />
-            <Route exact path="/dashboard/people/person" component={Person} />
+            <Route exact path="/dashboard/people/:personId" component={Person} />
+            <Route exact path='/dashboard/people/add' component={FormPerson} />
             <Route exact path='/signup' component={Signup}/> 
             <Route exact path='/login' component={SignIn} />
-            <Route exact path='/person' component={FormPerson} />
           </Switch>
         </Layout>
       </BrowserRouter>

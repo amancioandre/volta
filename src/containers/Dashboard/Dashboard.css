@@ -1,0 +1,21 @@
+.Dashboard {
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-flow: column nowrap;
+  box-sizing: border-box;
+}
+
+.Dashboard .controls {
+  position: fixed;
+  bottom: 40px;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  box-sizing: border-box;
+}

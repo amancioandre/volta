@@ -51,13 +51,9 @@ class Person extends Component {
       lng: longitude
      }
     })
-    console.log(this.state.position)
   }
   
   /* Lifecycle Methods */
-  componentWillMount() {
-    console.log('inside componentWillMount => Person')
-  }
 
   render() {
 

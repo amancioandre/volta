@@ -8,7 +8,12 @@ const navigationalItems = (props) => {
     <div className="NavigationalItems">
       <ul>
         <li>
-          <Link to=''>
+          <Link to='/dashboard'>
+            <img src="/img/icons/dashboard.png" /> Dashboard
+          </Link>
+        </li>
+        <li>
+          <Link to='/dashboard'>
             <img src="/img/icons/registers.png" /> My registers
           </Link>
         </li>

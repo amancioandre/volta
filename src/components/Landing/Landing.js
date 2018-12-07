@@ -1,6 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-import classes from './Landing.css';
+import './Landing.css';
 
 const landing = (props) => {
   return (
@@ -19,8 +20,8 @@ const landing = (props) => {
         </p>
       </div> */}
       <div>
-        <button>Sign in</button>
-        <button>Login</button>
+        <button><Link to='/signup'>Sign in</Link></button>
+        <button><Link to='/login'>Login</Link></button>
       </div>
       <p id="about">sobre nós</p>
     </div>

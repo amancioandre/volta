@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 
-import Aux from '../../hoc/Aux/Aux';
-import People from './PeopleList/PeopleList';
-import Person from './Person/Person';
+import './Dashboard.css'
+
+import CreatePerson from '../Controllers/CreatePersonController/Controller';
 
 class Dashboard extends Component {
   constructor(props) {
@@ -22,9 +22,11 @@ class Dashboard extends Component {
 
   render() {
     return (
-      <Aux>
-        <p>Nada</p>
-      </Aux>
+      <div className="Dashboard">
+        <div className="controls">
+          <CreatePerson />
+        </div>
+      </div>
     )
   }
 }

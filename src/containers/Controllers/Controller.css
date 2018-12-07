@@ -1,12 +1,21 @@
 .Controller,
 .Controller:focus {
   margin: 0 5px;
-  width: 60px;
-  height: 60px;
+  min-width: 60px;
+  min-height: 60px;
   border-radius: 50%;
   border: 2px solid #464C55;;
   background-color: #F8BC14;
   outline: none;
   text-transform: uppercase;
   font-weight: 800;
+}
+
+.CreatePerson {
+  width: 120px;
+  height: 120px;
+}
+
+.CreatePerson img {
+  height: 64px;
 }
