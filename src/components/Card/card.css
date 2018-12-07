@@ -1,9 +1,0 @@
-.person-card{
-  border: solid 1px black;
-  display: flex;
-  margin-top: 50px;
-  margin-left: 20px;
-  justify-content: space-around;
-  align-items: center;
-  width: 70%;
-}

@@ -22,10 +22,11 @@ const app = (props) => {
         <Layout>
           <Switch>
             <Route exact path='/' component={Landing} />
-            <Route exact path="/dashboard/people" component={PeopleList} />
-            <Route exact path='/dashboard' component={Dashboard} />
-            <Route exact path="/dashboard/people/:personId" component={Person} />
-            <Route exact path='/dashboard/people/add' component={FormPerson} />
+            <Dashboard>
+              <Route exact path="/dashboard/people/:personId" component={Person} />
+              <Route exact path='/dashboard/people/add' component={FormPerson} />
+              <Route exact path="/dashboard/people" component={PeopleList} />
+            </Dashboard>
             <Route exact path='/signup' component={Signup}/> 
             <Route exact path='/login' component={SignIn} />
           </Switch>

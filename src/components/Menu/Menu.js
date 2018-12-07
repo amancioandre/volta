@@ -17,6 +17,7 @@ class Menu extends Component {
     return (
       <div 
         className="Menu"
+        onClick={this.props.showMenu}
         style={{
           transform: this.props.show ? 'translateY(0)' : 'translateY(-100vh)'
         }}>

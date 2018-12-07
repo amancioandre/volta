@@ -3,8 +3,6 @@ import { Route } from 'react-router-dom';
 
 import './Dashboard.css'
 
-import CreatePerson from '../Controllers/CreatePersonController/Controller';
-
 class Dashboard extends Component {
   constructor(props) {
     super(props);
@@ -18,8 +16,10 @@ class Dashboard extends Component {
         username: 'jseeker',
         people: [1, 2, 3, 4, 5],
       },
-      
-
+      People: {
+        firstName: 'Teste',
+        personId: 3
+      },
       show: false,
     }
   }
@@ -33,10 +33,10 @@ class Dashboard extends Component {
 
   render() {
     return (
-      <div className="Dashboard">
-        <div className="controls">
-          <CreatePerson />
-        </div>
+      <div className="Dashboard" 
+        personId={this.state.People}
+        >
+        {this.props.children}
       </div>
     )
   }
