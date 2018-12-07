@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 /* CSS */
-import classes from './Backdrop.css';
+import './Backdrop.css';
 
 class Backdrop extends Component {
   constructor(props) {
@@ -13,12 +13,14 @@ class Backdrop extends Component {
   }
 
   showHandler() {
-    this.setState({ show: !this.state.show })
+    this.setState({ show: false })
   }
 
   render() {
     return (
-      <div className={classes.Backdrop}></div>
+      <div 
+        className="Backdrop">
+      </div>
     )
   }
 }

@@ -7,21 +7,46 @@ import PrimaryInfo from '../../../components/Forms/FormBuildings/PrimaryInfo/Pri
 import SecundaryInfo from '../../../components/Forms/FormBuildings/SecundaryInfo/SecundaryInfo';
 import MapComponent from '../../Map/Map';
 
+/* Controllers */
+import PositionController from '../../Controllers/GetPositionController/Controller';
+import SaveController from '../../Controllers/SavePersonController/Controller';
+
 class Person extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      showMore: false
+      showMore: false,
+      position: {
+        lat: -23.561679,
+        lng: -46.660056,
+      }
     }
 
     this.showMoreHandler = this.showMoreHandler.bind(this);
+    this.positionHandler = this.positionHandler.bind(this);
   }
 
   /* Handler Methods */
   showMoreHandler() {
     this.setState({showMore: !this.state.showMore})
-  } 
+  }
+
+  editHandler(message) {
+    console.log(message)
+  }
+
+  positionHandler(coords) {
+    const { latitude, longitude } = coords;
+    this.setState({
+      position:
+     {
+      lat: latitude,
+      lng: longitude
+     }
+    })
+    console.log(this.state.position)
+  }
   
   /* Lifecycle Methods */
   componentWillMount() {
@@ -67,10 +92,13 @@ class Person extends Component {
           {/* Conditioned to Viewer Action */ }
           {this.state.showMore ? moreInfo : null}
           <div className="controls">
-            <button><img src="/img/icons/cloud-computing.png" /></button>
-            <button><img src="/img/icons/pin_purple.png" /></button>
+            <SaveController savePerson={this.editHandler}/>
+            <PositionController
+              getPosition={this.positionHandler} />
           </div>
-          <MapComponent c='map-bottom'/>
+          <MapComponent 
+            c='map-bottom'
+            position={this.state.position}/>
         </div>
       </div>
     )
