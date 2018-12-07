@@ -18,7 +18,7 @@ class Menu extends Component {
       <div 
         className="Menu"
         style={{
-          transform: this.props.showMenu ? 'translateY(0)' : 'translateY(-100vh)'
+          transform: this.props.show ? 'translateY(0)' : 'translateY(-100vh)'
         }}>
         <NavigationalItems />
       </div>
