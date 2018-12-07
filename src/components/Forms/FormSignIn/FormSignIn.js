@@ -26,12 +26,10 @@ class FormSignIn extends Component {
 
   render() {
     return(
-    <Aux>
       <Form>
         <UserInfo state = { this.state } change = { this.handleChange }/>
         <SubmitButton buttonName = 'Login'/>
       </Form>
-    </Aux>
     )
   }
 

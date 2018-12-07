@@ -31,7 +31,6 @@ class FormPerson extends Component {
 
   render() {
     return(
-    <Aux>
       <Form>
         <PrimaryInfo state = { this.state } change = { this.handleChange }/>
         <SecundaryInfo state = { this.state } change = { this.handleChange }/>
@@ -41,7 +40,6 @@ class FormPerson extends Component {
         <Documents state = { this.state } change = { this.handleChange }/>
         <SubmitButton buttonName = 'Create'/>
       </Form>
-    </Aux>
     )
   }
 

@@ -9,7 +9,18 @@ class Dashboard extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      show: false
+      User: {
+        firstName:'Joana',
+        lastName:'Seeker',
+        dateOfBirth:'01/01/1993',
+        email:'joana.s@procurandovc.com.br',
+        organization:'Procurando voce', 
+        username: 'jseeker',
+        people: [1, 2, 3, 4, 5],
+      },
+      
+
+      show: false,
     }
   }
   /* Handler Methods */

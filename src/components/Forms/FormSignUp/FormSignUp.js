@@ -4,7 +4,7 @@ import Aux from '../../../hoc/Aux/Aux';
 import PrimaryInfo from '../FormBuildings/PrimaryInfo/PrimaryInfo';
 import UserInfo from '../FormBuildings/UserInfo/UserInfo';
 import SubmitButton from '../FormBuildings/SubmitButton/SubmitButton';
-
+import { Form } from 'reactstrap'
 // CSS
 import './FormSignUp.css';
 
@@ -31,13 +31,11 @@ class FormSignUp extends Component {
 
   render() {
     return(
-    <Aux>
-      <form>
+      <Form>
         <PrimaryInfo state = { this.state } change = { this.handleChange }/>
         <UserInfo signup = { true } state = { this.state } change = { this.handleChange }/>
         <SubmitButton buttonName = 'SignUp'/>
-      </form>
-    </Aux>
+      </Form>
     )
   }
 
