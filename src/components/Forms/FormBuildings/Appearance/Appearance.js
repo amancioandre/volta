@@ -1,13 +1,14 @@
 import React from "react";
 import Aux from "../../../../hoc/Aux/Aux";
+import { Form, FormGroup, Label, Input, FormFeedback, FormText } from 'reactstrap';
 
 // CSS
 
 const Appearance = props => {
   return (
-    <Aux>
-      <label>Body type:</label>
-      <select name="bodyType" onChange={e => props.change(e)}>
+    <FormGroup>
+      <Label>Body type:</Label>
+      <Input type= "select" name="bodyType" onChange={e => props.change(e)}>
         <option value="skinny">
           Skinny
         </option>
@@ -17,9 +18,9 @@ const Appearance = props => {
         <option value="fat">
           Fat
         </option>
-      </select>
-      <label>Eye color:</label>
-      <select name="eyeColor" onChange={e => props.change(e)}>
+      </Input>
+      <Label>Eye color:</Label>
+      <Input type= "select" name="eyeColor" onChange={e => props.change(e)}>
         <option value="brown">
           Brown
         </option>
@@ -29,9 +30,9 @@ const Appearance = props => {
         <option value="blue">
           Blue
         </option>
-      </select>
-      <label>Skin Color:</label>
-      <select name="skinColor" onChange={e => props.change(e)}>
+      </Input>
+      <Label>Skin Color:</Label>
+      <Input type= "select" name="skinColor" onChange={e => props.change(e)}>
         <option value="black">
           Black
         </option>
@@ -47,16 +48,16 @@ const Appearance = props => {
         <option value="caucasian">
           Caucasian
         </option>
-      </select>
-      <label>Hair Type:</label>
-      <input type="text" name="hairType" value={ props.hairType } onChange={ e => props.change(e)}/>  
-      <label>Height:</label>
-      <input type="number" name="height" value={ props.height } onChange={ e => props.change(e)}/> <span>kg</span>  
-      <label>Weight:</label>
-      <input type="text" name="weight" value={ props.weight } onChange={ e => props.change(e)}/> <span>m</span> 
-      <label>Tattoos:</label>
-      <input type="textarea" name="tattoos" value={ props.tattoos } onChange={ e => props.change(e)}/>   
-    </Aux>
+      </Input>
+      <Label>Hair Type:</Label>
+      <Input type="text" name="hairType" value={ props.hairType } onChange={ e => props.change(e)}/>  
+      <Label>Height:</Label>
+      <Input type="number" name="height" value={ props.height } onChange={ e => props.change(e)}/> <span>kg</span>  
+      <Label>Weight:</Label>
+      <Input type="text" name="weight" value={ props.weight } onChange={ e => props.change(e)}/> <span>m</span> 
+      <Label>Tattoos:</Label>
+      <Input type="textarea" name="tattoos" value={ props.tattoos } onChange={ e => props.change(e)}/>   
+    </FormGroup>
   );
 };
 

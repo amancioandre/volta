@@ -1,22 +1,29 @@
 import React from "react";
 import Aux from "../../../../hoc/Aux/Aux";
-
+import {
+  Form,
+  FormGroup,
+  Label,
+  Input,
+  FormFeedback,
+  FormText
+} from "reactstrap";
 // CSS
 
 const Health = props => {
   return (
     <Aux>
-      <label>Drugs:</label>
-      <select name="drugs" onChange={e => props.change(e)}>
+      <Label>Drugs:</Label>
+      <Input type="select" name="drugs" onChange={e => props.change(e)}>
         <option value="false">
           No
         </option>
         <option value="true">
           Yes
         </option>
-      </select>
-      <label>Amputhee:</label>
-      <select name="amputhee" onChange={e => props.change(e)}>
+      </Input>
+      <Label>Amputhee:</Label>
+      <Input type="select" name="amputhee" >
         <option value="No">
         No
         </option>
@@ -32,11 +39,11 @@ const Health = props => {
         <option value="Right Leg/Feet">
         Right Leg/Feet
         </option>
-      </select>
-      <label>Mental:</label>
-      <input type="text" name="mental" value={ props.mental } onChange={ e => props.change(e)}/>  
-      <label>Diseases:</label>
-      <input type="text" name="diseases" value={ props.diseases } onChange={ e => props.change(e)}/> 
+      </Input>
+      <Label>Mental:</Label>
+      <Input type="text" name="mental" value={ props.mental } onChange={ e => props.change(e)}/>  
+      <Label>Diseases:</Label>
+      <Input type="text" name="diseases" value={ props.diseases } onChange={ e => props.change(e)}/> 
     </Aux>
   );
 };

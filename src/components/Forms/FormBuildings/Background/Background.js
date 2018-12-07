@@ -1,20 +1,21 @@
 import React from "react";
 import Aux from "../../../../hoc/Aux/Aux";
+import { Form, FormGroup, Label, Input, FormFeedback, FormText } from 'reactstrap';
 
 // CSS
 
 const Background = props => {
   return (
-    <Aux>
-      <label>Profession:</label>
-      <input
+    <FormGroup>
+      <Label>Profession:</Label>
+      <Input
         type="text"
         name="profession"
         value={props.profession}
         onChange={e => props.change(e)}
       />
-      <label>Degree:</label>
-      <select name="degree" onChange={e => props.change(e)}>
+      <Label for= "degree">Degree:</Label>
+      <Input type='select' id = 'degree' name="degree" onChange={e => props.change(e)}>
         <option value="Non-alphabetized">
           Non-alphabetized
         </option>
@@ -27,9 +28,9 @@ const Background = props => {
         <option value="Master">
           Master
         </option>
-      </select>
-      <label>Marital Status:</label>
-      <select name="degree" onChange={e => props.change(e)}>
+      </Input>
+      <Label for='maritalStatus'>Marital Status:</Label>
+      <Input type='select' id = 'maritalStatus' name="maritalStatus" onChange={e => props.change(e)}>
         <option value="maried">
           Maried
         </option>
@@ -39,8 +40,8 @@ const Background = props => {
         <option value="widwed">
           Widwed
         </option>
-      </select>
-    </Aux>
+      </Input>
+    </FormGroup>
   );
 };
 
