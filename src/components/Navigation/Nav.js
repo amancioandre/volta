@@ -7,8 +7,11 @@ const nav = (props) => {
     <nav className="Nav">
       {/* <Logo /> */}
       {/* <NavigationItems /> */}
-      <p>logo</p>
-      <p>Menu</p>
+      <img src="/img/logo_placeholder.png" />
+      <div>
+        <p>Hello, Andre!</p>
+        <img src="/img/icons/menu.png" />
+      </div>      
     </nav>
   )
 }

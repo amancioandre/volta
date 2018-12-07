@@ -31,7 +31,7 @@ class MapComponent extends Component {
       registeredPeople: new LeafIcon({iconUrl: 'https://image.flaticon.com/icons/svg/1299/1299854.svg'})
     }
   }
-
+  /* Document Map Methods */
   createPin(props) {
     const { lat, lng } = props.position
     this.setState({ position: { lat, lng }});
@@ -41,7 +41,6 @@ class MapComponent extends Component {
   componentDidMount() {
     console.log("inside componentDidMount -> MapComponent")
   }
-
 
   render() {
 
