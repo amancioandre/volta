@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import 'leaflet/dist/leaflet.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './app.css';
 
 import Aux from './src/hoc/Aux/Aux';
