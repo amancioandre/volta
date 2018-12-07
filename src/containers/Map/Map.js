@@ -8,7 +8,7 @@ const LeafIcon = L.Icon.extend({
   options: {
   iconSize: [38, 95],
   iconAnchor: [16, 47],
-  popupAnchor: [0, 0]
+  popupAnchor: [3, -15]
   }
 })
 
@@ -61,7 +61,7 @@ class MapComponent extends Component {
         <Marker 
           icon={this.icons.registeredPeople}
           position={this.props.position ? this.props.position : position}>
-          <Popup>A pretty CSS3 popup.<br />Easily customizable.</Popup>
+          <Popup>Name: {this.props.name} {this.props.lastName}.<br />Age: {this.props.age} anos.</Popup>
         </Marker>
       </Map>
     )

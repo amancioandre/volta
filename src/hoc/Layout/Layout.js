@@ -17,7 +17,6 @@ class Layout extends Component {
 
   show() {
     this.setState({ show: !this.state.show })
-    console.log('backdrop clicked')
   }
 
   render() {

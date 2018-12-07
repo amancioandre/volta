@@ -1,8 +1,8 @@
 .Person {
-  margin: 40px 0 0 0;
-  padding: 0 20px;
-  height: 100vh;
+  margin: 0;
+  padding: 60px 20px 330px 20px;
   width: 100%;
+  box-sizing: border-box;
   display: flex;
   flex-flow: column wrap;
 }
@@ -13,7 +13,7 @@
 
 .Person .profile-pic {
   margin: 0 auto;
-  padding: 15px;
+  padding: 0 15px;
   height: 158px;
   box-sizing: border-box;
 }
@@ -21,7 +21,7 @@
 .Person .info {
   margin: 0 auto;
   width: 100%;
-
+  min-height: 140%;
 }
 
 .map-bottom {

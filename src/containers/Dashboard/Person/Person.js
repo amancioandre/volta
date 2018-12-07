@@ -10,6 +10,7 @@ import MapComponent from '../../Map/Map';
 /* Controllers */
 import PositionController from '../../Controllers/GetPositionController/Controller';
 import SaveController from '../../Controllers/SavePersonController/Controller';
+import SendPicture from '../../Controllers/SendPictureController/Controller';
 
 class Person extends Component {
   constructor(props) {
@@ -20,6 +21,11 @@ class Person extends Component {
       position: {
         lat: -23.561679,
         lng: -46.660056,
+      },
+      person: {
+        name: 'Andre',
+        lastName: 'Moraes',
+        age: '31'
       }
     }
 
@@ -50,12 +56,10 @@ class Person extends Component {
   
   /* Lifecycle Methods */
   componentWillMount() {
-    this.setState({ person: this.props.person })
     console.log('inside componentWillMount => Person')
   }
 
   render() {
-    // const { personData } = this.state.person
 
     let moreInfo = (
         <Aux>
@@ -78,16 +82,12 @@ class Person extends Component {
       <div className="Person">
         <div className="picture">
           <img className="profile-pic"
-            src={this.state.person ? this.state.person.picture : '/img/person_picture_alt.png'} 
+            src={this.state.person ? '/img/person_picture_alt.png' : this.state.person.picture } 
             alt={this.state.person ? this.state.person.picture : 'Picture not found, please insert picture!'}/>
         </div>
         <div className="info">
-          <div className="main-info">
-            <PrimaryInfo />
-          </div>
-          <div className="secundary-info">
-            <SecundaryInfo />
-          </div>
+          <PrimaryInfo />
+          <SecundaryInfo />
           <button className="btn-show" onClick={this.showMoreHandler}>{ !this.state.showMore ? 'Show more' : 'Hide'}</button>
           {/* Conditioned to Viewer Action */ }
           {this.state.showMore ? moreInfo : null}
@@ -95,10 +95,12 @@ class Person extends Component {
             <SaveController savePerson={this.editHandler}/>
             <PositionController
               getPosition={this.positionHandler} />
+            <SendPicture />
           </div>
           <MapComponent 
             c='map-bottom'
-            position={this.state.position}/>
+            position={this.state.position}
+            {...this.state.person} />
         </div>
       </div>
     )
