@@ -31,7 +31,7 @@ class MapComponent extends Component {
       registeredPeople: new LeafIcon({iconUrl: 'https://image.flaticon.com/icons/svg/1299/1299854.svg'})
     }
   }
-
+  /* Document Map Methods */
   createPin(props) {
     const { lat, lng } = props.position
     this.setState({ position: { lat, lng }});
@@ -42,12 +42,11 @@ class MapComponent extends Component {
     console.log("inside componentDidMount -> MapComponent")
   }
 
-
   render() {
 
     const position = [this.state.position.lat, this.state.position.lng];
     return (
-      <Map id="mapid" center={position} zoom={19}>
+      <Map id='mapid' className={this.props.c} center={position} zoom={19}>
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution="&copy; <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"

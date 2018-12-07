@@ -1,0 +1,71 @@
+.Person {
+  margin: 40px 0 0 0;
+  padding: 0 20px;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-flow: column wrap;
+}
+
+.Person .picture {
+  margin: 20px auto;
+}
+
+.Person .profile-pic {
+  margin: 0 auto;
+  padding: 15px;
+  height: 158px;
+  box-sizing: border-box;
+}
+
+.Person .info {
+  margin: 0 auto;
+  width: 100%;
+
+}
+
+.map-bottom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 250px;
+}
+
+.Person .btn-show {
+  margin: 10px auto;
+  height: 30px;
+  width: 100%;
+  font-size: 1.0rem;
+  text-transform: uppercase;
+  border-radius: 5px;
+  border: none;
+  background-color: #FB7E2E;
+}
+
+.Person .controls {
+  margin: 10px auto;
+  padding: 10px 0;
+  height: 80px;
+  width: 100%;
+  position: fixed;
+  bottom: 240px;
+  left: 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  background-color: white;
+  box-shadow: 0px -2px 6px #464C55;
+  border: none;
+}
+
+.Person .controls button {
+  margin: 0 5px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 2px solid #464C55;;
+  background-color: #F8BC14;
+  outline: none;
+  text-transform: uppercase;
+  font-weight: 800;
+}
