@@ -20,16 +20,17 @@ const app = (props) => {
     <Aux>
       <BrowserRouter>
         <Layout>
-          <Switch>
+          {/*<Switch>*/}
             <Route exact path='/' component={Landing} />
-            <Dashboard>
-              <Route exact path="/dashboard/people/:personId" component={Person} />
+            {/*<Dashboard>
+              <Route exact path="/dashboard/people/:personId" render={(props) => <Person {...props} />} />
               <Route exact path='/dashboard/people/add' component={FormPerson} />
-              <Route exact path="/dashboard/people" component={PeopleList} />
-            </Dashboard>
+              <Route exact path="/dashboard/people" render={(props, params) => <PeopleList {...props} {...params} />} />
+            </Dashboard> */}
             <Route exact path='/signup' component={Signup}/> 
             <Route exact path='/login' component={SignIn} />
-          </Switch>
+            <Route path='/dashboard' component={Dashboard} />
+          {/*</Switch>*/}
         </Layout>
       </BrowserRouter>
     </Aux>

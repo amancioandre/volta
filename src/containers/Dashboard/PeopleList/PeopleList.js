@@ -15,11 +15,12 @@ class PeopleList extends Component {
 
   render() {
     // const person = { firstName: 'Andre', lastName: 'Moraes', dateOfBirth: '04/07/1987', lastUpdate: '06/12/2018'}
-
+    console.log(this.props.match)
+    
     return (
       <div className="People">
         <div className="Cards">
-          <Card {...this.props.personId} />
+          <Card {...this.props} />
         </div>
         <div className="controls">
           <CreatePerson />

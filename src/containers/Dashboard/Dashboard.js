@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
+
+import Aux from '../../hoc/Aux/Aux';
+import FormPerson from '../../components/Forms/FormPerson/FormPerson'
+import PeopleList from './PeopleList/PeopleList';
+import Person from './Person/Person';
 
 import './Dashboard.css'
 
@@ -32,13 +37,26 @@ class Dashboard extends Component {
   }
 
   render() {
+    
+    // const dashProps = this.state;
+    // const wrappedChildren = React.Children.map(this.props.children, child => {
+    //   console.log(child, child.props.component)
+    //   return React.cloneElement(child, {dashProps});
+    // });
+    
+    // return (
+    //   <div className="Dashboard">
+    //     {wrappedChildren}
+    //   </div>
+    // )
+    
     return (
-      <div className="Dashboard" 
-        personId={this.state.People}
-        >
-        {this.props.children}
-      </div>
-    )
+        <Aux>
+          <Route exact path="/dashboard/people/:personId" render={(props) => <Person {...props} />} />
+          <Route exact path='/dashboard/people/add' component={FormPerson} />
+          <Route exact path="/dashboard/people" render={(props, params) => <PeopleList {...props} {...params} />} />
+        </Aux>
+      )
   }
 }
 
