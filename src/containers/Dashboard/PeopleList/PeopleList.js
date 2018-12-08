@@ -20,7 +20,7 @@ class PeopleList extends Component {
     return (
       <div className="People">
         <div className="Cards">
-          <Card {...this.props} />
+          <Card {...this.props.People} />
         </div>
         <div className="controls">
           <CreatePerson />

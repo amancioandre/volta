@@ -38,7 +38,7 @@ class Dashboard extends Component {
 
   render() {
     
-    // const dashProps = this.state;
+    const dashProps = this.state;
     // const wrappedChildren = React.Children.map(this.props.children, child => {
     //   console.log(child, child.props.component)
     //   return React.cloneElement(child, {dashProps});
@@ -54,7 +54,7 @@ class Dashboard extends Component {
         <Aux>
           <Route exact path="/dashboard/people/:personId" render={(props) => <Person {...props} />} />
           <Route exact path='/dashboard/people/add' component={FormPerson} />
-          <Route exact path="/dashboard/people" render={(props, params) => <PeopleList {...props} {...params} />} />
+          <Route exact path="/dashboard/people" render={() => <PeopleList {...dashProps} />} />
         </Aux>
       )
   }
