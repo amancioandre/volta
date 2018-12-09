@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 
 import Aux from '../../hoc/Aux/Aux';
 import FormPerson from '../../components/Forms/FormPerson/FormPerson'
@@ -21,10 +21,48 @@ class Dashboard extends Component {
         username: 'jseeker',
         people: [1, 2, 3, 4, 5],
       },
-      People: {
+      People: [{
         firstName: 'Teste',
+        lastName: 'Doll',
+        dateOfBirth: '31/12/1990',
+        updatedAt: '07/12/2018',
         personId: 3
       },
+      {
+        firstName: 'Teste',
+        lastName: 'Doll',
+        dateOfBirth: '31/12/1990',
+        updatedAt: '07/12/2018',
+        personId: 4
+      },
+      {
+        firstName: 'Teste',
+        lastName: 'Doll',
+        dateOfBirth: '31/12/1990',
+        updatedAt: '07/12/2018',
+        personId: 5
+      },
+      {
+        firstName: 'Teste',
+        lastName: 'Doll',
+        dateOfBirth: '31/12/1990',
+        updatedAt: '07/12/2018',
+        personId: 6
+      },
+      {
+        firstName: 'Teste',
+        lastName: 'Doll',
+        dateOfBirth: '31/12/1990',
+        updatedAt: '07/12/2018',
+        personId: 7
+      },
+      {
+        firstName: 'Teste',
+        lastName: 'Doll',
+        dateOfBirth: '31/12/1990',
+        updatedAt: '07/12/2018',
+        personId: 8
+      }],
       show: false,
     }
   }
@@ -39,16 +77,6 @@ class Dashboard extends Component {
   render() {
     
     const dashProps = this.state;
-    // const wrappedChildren = React.Children.map(this.props.children, child => {
-    //   console.log(child, child.props.component)
-    //   return React.cloneElement(child, {dashProps});
-    // });
-    
-    // return (
-    //   <div className="Dashboard">
-    //     {wrappedChildren}
-    //   </div>
-    // )
     
     return (
         <Aux>

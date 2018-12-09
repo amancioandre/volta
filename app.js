@@ -22,11 +22,6 @@ const app = (props) => {
         <Layout>
           {/*<Switch>*/}
             <Route exact path='/' component={Landing} />
-            {/*<Dashboard>
-              <Route exact path="/dashboard/people/:personId" render={(props) => <Person {...props} />} />
-              <Route exact path='/dashboard/people/add' component={FormPerson} />
-              <Route exact path="/dashboard/people" render={(props, params) => <PeopleList {...props} {...params} />} />
-            </Dashboard> */}
             <Route exact path='/signup' component={Signup}/> 
             <Route exact path='/login' component={SignIn} />
             <Route path='/dashboard' component={Dashboard} />

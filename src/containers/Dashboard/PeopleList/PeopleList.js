@@ -14,13 +14,14 @@ class PeopleList extends Component {
   }
 
   render() {
-    // const person = { firstName: 'Andre', lastName: 'Moraes', dateOfBirth: '04/07/1987', lastUpdate: '06/12/2018'}
-    console.log(this.props.match)
+    const PeopleCards = this.props.People.map((Person,i) => {
+      return <Card key={i} {...Person} /> 
+    })
     
     return (
       <div className="People">
         <div className="Cards">
-          <Card {...this.props.People} />
+          {PeopleCards}
         </div>
         <div className="controls">
           <CreatePerson />

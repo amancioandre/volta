@@ -1,19 +1,40 @@
-.person-card{
+.Card{
   display: flex;
-  margin-top: 50px;
-  margin-left: 20px;
+  margin: 10px 20px;
+  padding: 5px;
   width: 90%;
+  max-height: 150px;
   justify-content: space-around;
   align-items: center;
-  width: 70%;
   border: 2px solid #464C55;
   border-radius: 5px;
 }
 
-.person-card img {
-  height: 90px;
+.Card img {
+  height: 120px;
 }
 
-.person-card h3 {
-  font-size: 1.2rem;
+.Card h3 {
+  margin: 0;
+  font-size: 0.6rem;
+  color: #464C55;
+}
+
+.Card p {
+  margin: 0;
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: #464C55;
+}
+
+.Card .basic-info {
+  width: 50%;
+}
+
+.Card a,
+.Card a:hover,
+.Card a:visited {
+  text-decoration: none;
+  color: #464C55;
+  cursor: pointer;
 }

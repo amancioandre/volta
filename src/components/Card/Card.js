@@ -1,30 +1,26 @@
 import React from 'react';
-import { Redirect } from 'react-router-dom';
-
-import Aux from '../../hoc/Aux/Aux';
+import { Link } from 'react-router-dom';
 
 import './Card.css';
 
 const Card = (props) => {
   return (
-    <Aux>
+    <Link to={'/dashboard/people/'+props.personId}>
       <div 
-        className="person-card"
-        onClick={() => <Redirect to={'/dashboard/people/'+props.personId} />}
-        >
+        className="Card">
         <img src= '/img/person_picture_alt.png' />
-        <div className="person-basic-info">
+        <div className="basic-info">
           <h3>First Name:</h3>
-          <span>{ props.firstName }</span>
+          <p>{ props.firstName }</p>
           <h3>Last Name:</h3>
-          <span>{ props.lastName }</span>
+          <p>{ props.lastName }</p>
           <h3>Date of birth:</h3>
-          <span>{ props.dateOfBirth }</span>
+          <p>{ props.dateOfBirth }</p>
           <h3>Last update</h3>
-          <span>{ props.updatedAt }</span>
+          <p>{ props.updatedAt }</p>
         </div>
       </div>
-    </Aux>
+    </Link>
   )
 }
 

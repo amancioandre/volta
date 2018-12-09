@@ -4,3 +4,9 @@
   width: 100%;
   min-height: 180px;
 }
+
+@media (min-width: 376px) {
+  #mapid {
+    height: 100vh;
+  }
+}

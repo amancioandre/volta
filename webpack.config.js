@@ -45,15 +45,15 @@ module.exports = {
     filename: 'bundle.js',
   },
   /* CONFIGURATION FOR UBUNTU AND MAC */
-  // devServer: {
-  //   contentBase: path.join(__dirname, 'public'),
-  //   port: 3000,
-  //   publicPath: 'http://localhost:3000/dist',
-  //   hot: true,
-  //   historyApiFallback: true,
-  // },
-  /* CONFIGURATION FOR C9 */
   devServer: {
+    contentBase: path.join(__dirname, 'public'),
+    port: 3000,
+    publicPath: 'http://localhost:3000/dist',
+    hot: true,
+    historyApiFallback: true,
+  },
+  /* CONFIGURATION FOR C9 */
+  /* devServer: {
     disableHostCheck: true,
     historyApiFallback: true,
     contentBase: path.join(__dirname, 'public'),
@@ -62,7 +62,7 @@ module.exports = {
     port: process.env.PORT,
     publicPath: 'http://localhost:8080/dist',
     "public": "volta-stormamnc.c9users.io" //no trailing slash
-    },
+  },*/
     plugins: [new webpack.HotModuleReplacementPlugin()],
     mode: 'development',
     performance: {
