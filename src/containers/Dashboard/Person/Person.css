@@ -43,7 +43,7 @@
 }
 
 .Person .controls {
-  margin: 10px auto;
+  margin: 10px 0;
   padding: 10px 0;
   height: 80px;
   width: 100%;
@@ -65,9 +65,9 @@
 
 @media (min-width: 900px) {
   .Person {
-    position: relative;
+    position: absolute;
     top: 60px;
-    left: 10px;
+    right: 10px;
     padding: 60px 20px 90px 20px;
     width: 375px;
     background-color: white;
@@ -76,9 +76,9 @@
   }
 
   .Person .controls {
-    width: 375px;
     position: fixed;
-    left: 10px;
+    right: 10px;
     bottom: -10px;
+    width: 375px;
   }
 }

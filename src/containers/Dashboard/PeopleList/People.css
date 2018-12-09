@@ -18,3 +18,31 @@
   background-color: white;
   box-shadow: 0px -2px 6px #464C55;
 }
+
+@media (min-width: 900px) {
+  .People {
+    position: absolute;
+    top: 40px;
+    right: 10px;
+    margin: 15px 0 0 0;
+    width: 375px;
+    background-color: white;
+    box-shadow: 2px -2px 6px #464C55, -2px 2px 6px #464C55;
+    z-index: 10;
+  }
+
+  .People .controls {
+    width: 375px;
+    position: fixed;
+    right: 100px;
+    bottom: -10px;
+  }
+
+  .map-wide {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    z-index: -20;
+  }
+}

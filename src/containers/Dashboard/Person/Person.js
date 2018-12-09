@@ -90,7 +90,6 @@ class Person extends Component {
     
     return (
       <Aux>
-
         <div className="Person">
           <div className="picture">
             <img className="profile-pic"
@@ -103,12 +102,12 @@ class Person extends Component {
             <button className="btn-show" onClick={this.showMoreHandler}>{ !this.state.showMore ? 'Show more' : 'Hide'}</button>
             {/* Conditioned to Viewer Action */ }
             {this.state.showMore ? moreInfo : null}
-            <div className="controls">
-              <SaveController savePerson={this.editHandler}/>
-              <PositionController
-                getPosition={this.positionHandler} />
-              <SendPicture />
-            </div>
+          </div>
+          <div className="controls">
+            <SaveController savePerson={this.editHandler}/>
+            <PositionController
+              getPosition={this.positionHandler} />
+            <SendPicture />
           </div>
         </div>
         <MapComponent 

@@ -10,22 +10,18 @@ import Dashboard from './src/containers/Dashboard/Dashboard';
 import Landing from './src/components/Landing/Landing';
 import Signup from './src/components/Signup/Signup';
 import SignIn from './src/components/SignIn/SignIn';
-import FormPerson from './src/components/Forms/FormPerson/FormPerson'
-import PeopleList from './src/containers/Dashboard/PeopleList/PeopleList';
-import Person from './src/containers/Dashboard/Person/Person';
-
 
 const app = (props) => {
   return (
     <Aux>
       <BrowserRouter>
         <Layout>
-          {/*<Switch>*/}
+          <Switch>
             <Route exact path='/' component={Landing} />
             <Route exact path='/signup' component={Signup}/> 
             <Route exact path='/login' component={SignIn} />
             <Route path='/dashboard' component={Dashboard} />
-          {/*</Switch>*/}
+          </Switch>
         </Layout>
       </BrowserRouter>
     </Aux>
