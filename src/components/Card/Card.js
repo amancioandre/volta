@@ -5,7 +5,7 @@ import './Card.css';
 
 const Card = (props) => {
   return (
-    <Link to={'/dashboard/people/'+props.personId}>
+    <Link to={'/dashboard/people/'+props._id} person={props}>
       <div 
         className="Card">
         <img src= '/img/person_picture_alt.png' />

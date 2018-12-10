@@ -46,7 +46,7 @@ class Person extends Component {
   
   /* Lifecycle Methods */
   render() {
-    console.log
+    console.log('PERSON->',this.props)
     let moreInfo = (
         <Aux>
           <div>
