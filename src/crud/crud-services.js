@@ -10,7 +10,7 @@ class CrudService {
   }
 
   createPerson(person) {
-    return this.service.post('/persons', { person })
+    return this.service.post('/people', { person })
       .then(response => response.data);
   }
 
@@ -24,21 +24,31 @@ class CrudService {
       .then(response => response.data);
   }
 
+  getAll() {
+    return this.service.get('/people')
+      .then(response => response.data);
+  }
+
+
+  searchPerson(query) {
+    return this.service.get(`/people/?q=${query}`)
+      .then(response => response.data);
+  }
+
   deletePerson(personId) {
     return this.service.delete(`/people/${personId}`)
       .then(response => response.data);
   }
 
   addPicture(personId, file) {
-    console.log(personId, file);
     const formData = new FormData();
-    formData.append('picture', file)
+    formData.append('picture', file);
     return this.service.patch(`/people/${personId}`, formData, {
       headers: {
-        'Content-Type': 'multipart/form-data'
-      }
+        'Content-Type': 'multipart/form-data',
+      },
     })
-      .then(response => response.data)
+      .then(response => response.data);
   }
 }
 
