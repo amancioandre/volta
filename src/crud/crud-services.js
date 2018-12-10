@@ -15,18 +15,30 @@ class CrudService {
   }
 
   editPerson(personId, person) {
-    return this.service.patch(`/persons/${personId}`, { person })
+    return this.service.patch(`/people/${personId}`, { person })
       .then(response => response.data);
   }
 
   getPerson(personId) {
-    return this.service.get(`/persons/${personId}`)
+    return this.service.get(`/people/${personId}`)
       .then(response => response.data);
   }
 
   deletePerson(personId) {
-    return this.service.delete(`/persons/${personId}`)
+    return this.service.delete(`/people/${personId}`)
       .then(response => response.data);
+  }
+
+  addPicture(personId, file) {
+    console.log(personId, file);
+    const formData = new FormData();
+    formData.append('picture', file)
+    return this.service.patch(`/people/${personId}`, formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data'
+      }
+    })
+      .then(response => response.data)
   }
 }
 

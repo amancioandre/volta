@@ -37,5 +37,7 @@
 }
 
 @media (min-width: 376px) {
-  
+  .Nav div {
+    width: 600px;
+  }
 }

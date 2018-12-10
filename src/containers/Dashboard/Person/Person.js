@@ -66,13 +66,13 @@ class Person extends Component {
       lastName: 'Doll',
       dateOfBirth: '31/12/1990',
       updatedAt: '07/12/2018',
-      personId: 3
+      personId: '5c0e9aea9c52a34bc47dafed'
       }
     });
   }
 
   render() {
-
+    console.log
     let moreInfo = (
         <Aux>
           <div>
@@ -109,7 +109,7 @@ class Person extends Component {
             <SaveController savePerson={this.editHandler}/>
             <PositionController
               getPosition={this.positionHandler} />
-            <SendPicture />
+            <SendPicture personId={this.props.match.params.personId}/>
           </div>
         </div>
         <MapComponent 
