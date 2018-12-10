@@ -10,22 +10,33 @@ class CrudService {
   }
 
   createPerson(person) {
-    return this.service.post('/persons', { person })
+    return this.service.post('/people', { person })
       .then(response => response.data);
   }
 
   editPerson(personId, person) {
-    return this.service.patch(`/persons/${personId}`, { person })
+    return this.service.patch(`/people/${personId}`, { person })
       .then(response => response.data);
   }
 
   getPerson(personId) {
-    return this.service.get(`/persons/${personId}`)
+    return this.service.get(`/people/${personId}`)
+      .then(response => response.data);
+  }
+
+  getAll() {
+    return this.service.get('/people')
+      .then(response => response.data);
+  }
+
+
+  searchPerson(query) {
+    return this.service.get(`/people/?q=${query}`)
       .then(response => response.data);
   }
 
   deletePerson(personId) {
-    return this.service.delete(`/persons/${personId}`)
+    return this.service.delete(`/people/${personId}`)
       .then(response => response.data);
   }
 }

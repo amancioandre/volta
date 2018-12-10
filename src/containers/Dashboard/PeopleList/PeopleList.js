@@ -3,6 +3,7 @@ import Card from '../../../components/Card/Card'
 import CreatePerson from '../../Controllers/CreatePersonController/Controller';
 import MapComponent from '../../Map/Map';
 import Aux from '../../../hoc/Aux/Aux';
+import Search from '../../../components/Search/Search';
 
 import './People.css'
 
@@ -22,7 +23,9 @@ class PeopleList extends Component {
     
     return (
       <Aux>
+
         <div className="People">
+          <Search/>
           <div className="Cards">
             {PeopleCards}
           </div>

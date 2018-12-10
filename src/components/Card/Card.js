@@ -11,13 +11,13 @@ const Card = (props) => {
         <img src= '/img/person_picture_alt.png' />
         <div className="basic-info">
           <h3>First Name:</h3>
-          <p>{ props.firstName }</p>
+          <p>{ props.name.firstName }</p>
           <h3>Last Name:</h3>
-          <p>{ props.lastName }</p>
+          <p>{ props.name.lastName }</p>
           <h3>Date of birth:</h3>
           <p>{ props.dateOfBirth }</p>
           <h3>Last update</h3>
-          <p>{ props.updatedAt }</p>
+          <p>{ props.Updated_at }</p>
         </div>
       </div>
     </Link>

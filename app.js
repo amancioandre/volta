@@ -18,7 +18,6 @@ const app = (props) => {
       <BrowserRouter>
         <Layout>
           <Switch>
-
             <Route exact path='/person' component={FormPerson} />
             <Route exact path='/' component={Landing} />
             <Route exact path='/signup' component={Signup}/> 
