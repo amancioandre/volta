@@ -1,7 +1,7 @@
 /* Webpack Modules */
 const path = require('path');
 
-      
+
 const webpack = require('webpack');
 
 /* Bundler */
@@ -33,10 +33,10 @@ module.exports = {
         use: [
           {
             loader: 'file-loader',
-            options: {}
-          }
-        ]
-      }
+            options: {},
+          },
+        ],
+      },
     ],
   },
   resolve: { extensions: ['*', '.js', '.jsx'] },
@@ -62,11 +62,11 @@ module.exports = {
     port: process.env.PORT,
     publicPath: 'http://localhost:8080/dist',
     "public": "volta-stormamnc.c9users.io" //no trailing slash
-  },*/
-    plugins: [new webpack.HotModuleReplacementPlugin()],
-    mode: 'development',
-    performance: {
-      hints: false,
+  }, */
+  plugins: [new webpack.HotModuleReplacementPlugin()],
+  mode: 'development',
+  performance: {
+    hints: false,
   },
 
 };

@@ -9,8 +9,7 @@ import Appearance from '../FormBuildings/Appearance/Appearance';
 import Health from '../FormBuildings/Health/Health';
 import Documents from '../FormBuildings/Documents/Documents';
 import { Form } from 'reactstrap';
-import axios from 'axios';
-
+import CrudServices from '../../../crud/crud-services';
 // CSS
 // import './FormSignUp.css';
 
@@ -21,21 +20,33 @@ class FormPerson extends Component {
     this.state = {
 
     };
+    this.service = new CrudServices();
     this.handleChange = this.handleChange.bind(this);
+    this.handleCreatePerson = this.handleCreatePerson.bind(this);
   };
 
-  handleCreatePerson (person) {
-    axios.post(url, { person }).then(()=>{}).catch(()=>{});
+  handleCreatePerson(event) {
+    event.preventDefault();
+    const person = this.state;
+    console.log(person);
+    this.service
+      .createPerson(person)
+      .then(response => {
+        this.setState({});
+        // this.props.getUser(response);
+      })
+      .catch(error => console.log(error));
   }
 
   handleChange (event) {  
     const {name, value} = event.target;
     this.setState({[name]: value});
+    console.log(this.state);
   }
 
   render() {
     return(
-      <Form onSubmit={ this.handleCreatePerson(this.state) } >
+      <Form onSubmit= {this.handleCreatePerson}>
         <PrimaryInfo state = { this.state } change = { this.handleChange }/>
         <SecundaryInfo state = { this.state } change = { this.handleChange }/>
         <Background state = { this.state } change = { this.handleChange }/>

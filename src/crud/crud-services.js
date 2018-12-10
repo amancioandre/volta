@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-class AuthService {
+class CrudService {
   constructor() {
     const service = axios.create({
       baseURL: 'http://localhost:5000/api',
@@ -24,10 +24,10 @@ class AuthService {
   //   .then(response => response.data)
   // }
 
-  signup(user) {
-    return this.service.post('/users', { user })
+  createPerson(person) {
+    return this.service.post('/persons', { person })
       .then(response => response.data);
   }
 }
 
-export default AuthService;
+export default CrudService;

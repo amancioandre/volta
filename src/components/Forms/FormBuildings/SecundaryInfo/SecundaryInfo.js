@@ -75,7 +75,7 @@ const SecundaryInfo = props => {
         <Input
           type="text"
           name="state"
-          value={props.state}
+          value={props.addressState}
           onChange={e => props.change(e)}
         />
       </FormGroup>

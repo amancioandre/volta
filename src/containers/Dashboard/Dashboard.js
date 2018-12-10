@@ -84,8 +84,8 @@ class Dashboard extends Component {
     
     return (
         <Aux>
+          <Route exact path='/dashboard/people/add' render={(props) => <FormPerson {...props} />} />
           <Route exact path="/dashboard/people/:personId" render={(props) => <Person {...props} />} />
-          <Route exact path='/dashboard/people/add' component={FormPerson} />
           <Route exact path="/dashboard/people" render={() => <PeopleList {...dashProps} />} />
         </Aux>
       )

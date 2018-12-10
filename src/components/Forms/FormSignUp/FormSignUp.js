@@ -34,7 +34,7 @@ class FormSignUp extends Component {
     this.service
       .signup(user)
       .then(response => {
-        this.setState();
+        this.setState({});
         this.props.getUser(response);
       })
       .catch(error => console.log(error));

@@ -10,6 +10,7 @@ import Dashboard from './src/containers/Dashboard/Dashboard';
 import Landing from './src/components/Landing/Landing';
 import Signup from './src/components/Signup/Signup';
 import SignIn from './src/components/SignIn/SignIn';
+import FormPerson from './src/components/Forms/FormPerson/FormPerson';
 
 const app = (props) => {
   return (
@@ -17,6 +18,8 @@ const app = (props) => {
       <BrowserRouter>
         <Layout>
           <Switch>
+
+            <Route exact path='/person' component={FormPerson} />
             <Route exact path='/' component={Landing} />
             <Route exact path='/signup' component={Signup}/> 
             <Route exact path='/login' component={SignIn} />
