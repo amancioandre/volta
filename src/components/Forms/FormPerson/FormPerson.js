@@ -9,6 +9,7 @@ import Appearance from '../FormBuildings/Appearance/Appearance';
 import Health from '../FormBuildings/Health/Health';
 import Documents from '../FormBuildings/Documents/Documents';
 import { Form } from 'reactstrap';
+import axios from 'axios';
 
 // CSS
 // import './FormSignUp.css';
@@ -23,15 +24,18 @@ class FormPerson extends Component {
     this.handleChange = this.handleChange.bind(this);
   };
 
+  handleCreatePerson (person) {
+    axios.post(url, { person }).then(()=>{}).catch(()=>{});
+  }
+
   handleChange (event) {  
     const {name, value} = event.target;
-    console.log (event.target);
     this.setState({[name]: value});
   }
 
   render() {
     return(
-      <Form>
+      <Form onSubmit={ this.handleCreatePerson(this.state) } >
         <PrimaryInfo state = { this.state } change = { this.handleChange }/>
         <SecundaryInfo state = { this.state } change = { this.handleChange }/>
         <Background state = { this.state } change = { this.handleChange }/>
