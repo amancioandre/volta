@@ -43,21 +43,21 @@
 }
 
 .Person .controls {
-  margin: 10px 0;
+  position: fixed;
+  bottom: 248px;
+  margin: 0;
+  right: 0;
   padding: 10px 0;
   height: 80px;
   width: 100%;
-  position: fixed;
-  bottom: 240px;
-  left: 0;
   display: flex;
-  flex-flow: row wrap;
-  justify-content: space-evenly;
+  flex-flow: row;
+  justify-content: center;
+  box-sizing: border-box;
   background-color: white;
   box-shadow: 0px -2px 6px #464C55;
-  border: none;
-  border-bottom: 1px solid #464C55;
-} 
+  z-index: 30;
+}
 
 .Person h3 {
   font-size: 1.0rem;
@@ -72,7 +72,7 @@
     width: 375px;
     background-color: white;
     box-shadow: 2px -2px 6px #464C55, -2px 2px 6px #464C55;
-    z-index: 10;
+    z-index: 30;
   }
 
   .Person .controls {
@@ -80,5 +80,13 @@
     right: 10px;
     bottom: -10px;
     width: 375px;
+  }
+
+  .map-bottom {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    height: 100%;
+    width: 100%;
   }
 }
