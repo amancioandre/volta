@@ -1,6 +1,6 @@
 .Person {
   margin: 0;
-  padding: 60px 20px 330px 20px;
+  padding: 60px 20px 350px 20px;
   width: 100%;
   box-sizing: border-box;
   display: flex;
@@ -43,7 +43,7 @@
 }
 
 .Person .controls {
-  margin: 10px auto;
+  margin: 10px 0;
   padding: 10px 0;
   height: 80px;
   width: 100%;
@@ -58,3 +58,27 @@
   border: none;
   border-bottom: 1px solid #464C55;
 } 
+
+.Person h3 {
+  font-size: 1.0rem;
+}
+
+@media (min-width: 900px) {
+  .Person {
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    padding: 60px 20px 90px 20px;
+    width: 375px;
+    background-color: white;
+    box-shadow: 2px -2px 6px #464C55, -2px 2px 6px #464C55;
+    z-index: 10;
+  }
+
+  .Person .controls {
+    position: fixed;
+    right: 10px;
+    bottom: -10px;
+    width: 375px;
+  }
+}

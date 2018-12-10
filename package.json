@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "webpack": "webpack-dev-server --progress --color"
+    "webpack": "webpack-dev-server --progress --color",
+    "webpackC9": "webpack-dev-server --history-api-fallback --inline --progress --public volta-stormamnc.c9users.io --host $IP --port $PORT"
   },
   "repository": {
     "type": "git",

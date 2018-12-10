@@ -1,9 +1,12 @@
 import React, { Component } from "react";
 import { Route } from "react-router-dom";
 
-import Aux from "../../hoc/Aux/Aux";
-import People from "./PeopleList/PeopleList";
-import Person from "./Person/Person";
+import Aux from '../../hoc/Aux/Aux';
+import FormPerson from '../../components/Forms/FormPerson/FormPerson'
+import PeopleList from './PeopleList/PeopleList';
+import Person from './Person/Person';
+
+import './Dashboard.css'
 
 class Dashboard extends Component {
   constructor(props) {
@@ -21,47 +24,50 @@ class Dashboard extends Component {
         people: [1, 2, 3, 5],
         role: "Agent"
       },
-
-      People: [
-        {
-          id: 1,
-          firstName: "João",
-          lastName: "Lost",
-          dateOfBirth: "01/01/1992",
-          created_At
-        },
-        {
-          id: 2,
-          firstName: "João",
-          lastName: "Lost",
-          dateOfBirth: "01/01/1992",
-          created_At: ''
-        },
-        {
-          id: 3,
-          firstName: "João",
-          lastName: "Lost",
-          dateOfBirth: "01/01/1992",
-          created_At
-        },
-        {
-          id: 4,
-          firstName: "João",
-          lastName: "Lost",
-          dateOfBirth: "01/01/1992",
-          created_At
-        },
-        {
-          id: 5,
-          firstName: "João",
-          lastName: "Lost",
-          dateOfBirth: "01/01/1992",
-          created_At
-        },
-      ],
-
-      show: false
-    };
+      People: [{
+        firstName: 'Teste',
+        lastName: 'Doll',
+        dateOfBirth: '31/12/1990',
+        updatedAt: '07/12/2018',
+        personId: 3
+      },
+      {
+        firstName: 'Teste',
+        lastName: 'Doll',
+        dateOfBirth: '31/12/1990',
+        updatedAt: '07/12/2018',
+        personId: 4
+      },
+      {
+        firstName: 'Teste',
+        lastName: 'Doll',
+        dateOfBirth: '31/12/1990',
+        updatedAt: '07/12/2018',
+        personId: 5
+      },
+      {
+        firstName: 'Teste',
+        lastName: 'Doll',
+        dateOfBirth: '31/12/1990',
+        updatedAt: '07/12/2018',
+        personId: 6
+      },
+      {
+        firstName: 'Teste',
+        lastName: 'Doll',
+        dateOfBirth: '31/12/1990',
+        updatedAt: '07/12/2018',
+        personId: 7
+      },
+      {
+        firstName: 'Teste',
+        lastName: 'Doll',
+        dateOfBirth: '31/12/1990',
+        updatedAt: '07/12/2018',
+        personId: 8
+      }],
+      show: false,
+    }
   }
   /* Handler Methods */
   
@@ -73,11 +79,16 @@ class Dashboard extends Component {
   }
 
   render() {
+    
+    const dashProps = this.state;
+    
     return (
-      <Aux>
-        <p>Nada</p>
-      </Aux>
-    );
+        <Aux>
+          <Route exact path="/dashboard/people/:personId" render={(props) => <Person {...props} />} />
+          <Route exact path='/dashboard/people/add' component={FormPerson} />
+          <Route exact path="/dashboard/people" render={() => <PeopleList {...dashProps} />} />
+        </Aux>
+      )
   }
 }
 

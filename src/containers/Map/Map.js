@@ -52,7 +52,7 @@ class MapComponent extends Component {
       <Map 
         id='mapid' 
         className={this.props.c} 
-        center={this.props.position} 
+        center={this.props.position ? this.props.position : position} 
         zoom={18}>
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

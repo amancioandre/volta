@@ -1,0 +1,48 @@
+.People {
+  margin: 75px 0 0 0;
+  width: 100%;
+  padding: 0 0 90px 0;
+}
+
+.People .controls {
+  position: fixed;
+  bottom: 0;
+  margin: 0;
+  padding: 10px 0;
+  height: 100px;
+  width: 100%;
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  box-sizing: border-box;
+  background-color: white;
+  box-shadow: 0px -2px 6px #464C55;
+}
+
+@media (min-width: 900px) {
+  .People {
+    position: absolute;
+    top: 40px;
+    right: 10px;
+    margin: 15px 0 0 0;
+    width: 375px;
+    background-color: white;
+    box-shadow: 2px -2px 6px #464C55, -2px 2px 6px #464C55;
+    z-index: 10;
+  }
+
+  .People .controls {
+    width: 375px;
+    position: fixed;
+    right: 100px;
+    bottom: -10px;
+  }
+
+  .map-wide {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    z-index: -20;
+  }
+}

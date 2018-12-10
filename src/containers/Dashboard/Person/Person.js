@@ -3,9 +3,13 @@ import React, { Component } from 'react';
 import './Person.css';
 
 import Aux from '../../../hoc/Aux/Aux';
+import MapComponent from '../../Map/Map';
 import PrimaryInfo from '../../../components/Forms/FormBuildings/PrimaryInfo/PrimaryInfo';
 import SecundaryInfo from '../../../components/Forms/FormBuildings/SecundaryInfo/SecundaryInfo';
-import MapComponent from '../../Map/Map';
+import Documents from '../../../components/Forms/FormBuildings/Documents/Documents';
+import Appearance from '../../../components/Forms/FormBuildings/Appearance/Appearance';
+import Health from '../../../components/Forms/FormBuildings/Health/Health';
+
 
 /* Controllers */
 import PositionController from '../../Controllers/GetPositionController/Controller';
@@ -51,12 +55,18 @@ class Person extends Component {
       lng: longitude
      }
     })
-    console.log(this.state.position)
   }
   
   /* Lifecycle Methods */
-  componentWillMount() {
-    console.log('inside componentWillMount => Person')
+  componentDidMount() {
+    this.setState({person: {
+      firstName: 'Teste',
+      lastName: 'Doll',
+      dateOfBirth: '31/12/1990',
+      updatedAt: '07/12/2018',
+      personId: 3
+      }
+    });
   }
 
   render() {
@@ -65,44 +75,46 @@ class Person extends Component {
         <Aux>
           <div>
             <h3>Documents</h3>
-            {/* <Documents /> */}
+            <Documents />
           </div>
           <div>
             <h3>Appearance</h3>
-            {/* <Appearance /> */}
+            <Appearance />
           </div>
           <div>
             <h3>Health Condidition</h3>
-            {/* <Health /> */}
+            <Health />
           </div>
         </Aux>
       )
     
     return (
-      <div className="Person">
-        <div className="picture">
-          <img className="profile-pic"
-            src={this.state.person ? '/img/person_picture_alt.png' : this.state.person.picture } 
-            alt={this.state.person ? this.state.person.picture : 'Picture not found, please insert picture!'}/>
-        </div>
-        <div className="info">
-          <PrimaryInfo />
-          <SecundaryInfo />
-          <button className="btn-show" onClick={this.showMoreHandler}>{ !this.state.showMore ? 'Show more' : 'Hide'}</button>
-          {/* Conditioned to Viewer Action */ }
-          {this.state.showMore ? moreInfo : null}
+      <Aux>
+        <div className="Person">
+          <div className="picture">
+            <img className="profile-pic"
+              src={this.state.person ? '/img/person_picture_alt.png' : this.state.person.picture } 
+              alt={this.state.person ? this.state.person.picture : 'Picture not found, please insert picture!'}/>
+          </div>
+          <div className="info">
+            <PrimaryInfo />
+            <SecundaryInfo />
+            <button className="btn-show" onClick={this.showMoreHandler}>{ !this.state.showMore ? 'Show more' : 'Hide'}</button>
+            {/* Conditioned to Viewer Action */ }
+            {this.state.showMore ? moreInfo : null}
+          </div>
           <div className="controls">
             <SaveController savePerson={this.editHandler}/>
             <PositionController
               getPosition={this.positionHandler} />
             <SendPicture />
           </div>
-          <MapComponent 
-            c='map-bottom'
-            position={this.state.position}
-            {...this.state.person} />
         </div>
-      </div>
+        <MapComponent 
+          c='map-bottom'
+          position={this.state.position}
+          {...this.state.person} />
+      </Aux>
     )
   }
 }

@@ -1,25 +1,26 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-import './card.css';
+import './Card.css';
 
 const Card = (props) => {
   return (
-    
-    <div className="person-card">
-      <div className= 'person-picture'>
-        <img src= '/img/person_picture_alt.png'></img>
+    <Link to={'/dashboard/people/'+props.personId}>
+      <div 
+        className="Card">
+        <img src= '/img/person_picture_alt.png' />
+        <div className="basic-info">
+          <h3>First Name:</h3>
+          <p>{ props.firstName }</p>
+          <h3>Last Name:</h3>
+          <p>{ props.lastName }</p>
+          <h3>Date of birth:</h3>
+          <p>{ props.dateOfBirth }</p>
+          <h3>Last update</h3>
+          <p>{ props.updatedAt }</p>
+        </div>
       </div>
-      <div className="person-basic-info">
-        <h3>First Name:</h3>
-        <span>{ props.firstName }</span>
-        <h3>Last Name:</h3>
-        <span>{ props.lastName }</span>
-        <h3>Date of birth:</h3>
-        <span>{ props.dateOfBirth }</span>
-        <h3>Last update</h3>
-        <span>{ props.updatedAt }</span>
-      </div>
-    </div>
+    </Link>
   )
 }
 

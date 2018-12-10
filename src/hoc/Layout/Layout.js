@@ -24,7 +24,8 @@ class Layout extends Component {
       <Aux>
         <Nav 
           showMenu={this.show} />
-        <Menu 
+        <Menu
+          showMenu={this.show}
           show={this.state.show} />
         <Backdrop
           show={this.state.show}

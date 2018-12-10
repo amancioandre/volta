@@ -8,18 +8,18 @@ const navigationalItems = (props) => {
     <div className="NavigationalItems">
       <ul>
         <li>
-          <Link to=''>
+          <Link to='/dashboard/people'>
             <img src="/img/icons/registers.png" /> My registers
           </Link>
         </li>
         <li>
-          <Link to=''>
+          <Link to='/dashboard/missing'>
             <img src="/img/icons/missing.png" /> Missing
           </Link>
         </li>
         <li>
-          <Link to=''>
-            <img src="/img/icons/map.png" /> Map
+          <Link to='/dashboard/profile'>
+            <img src="/img/icons/profile.png" /> Profile
           </Link>
         </li>
 

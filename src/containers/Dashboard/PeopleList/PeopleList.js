@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
 import Card from '../../../components/Card/Card'
+import CreatePerson from '../../Controllers/CreatePersonController/Controller';
+import MapComponent from '../../Map/Map';
+import Aux from '../../../hoc/Aux/Aux';
+
+import './People.css'
 
 class PeopleList extends Component {
   constructor(props) {
@@ -11,8 +16,22 @@ class PeopleList extends Component {
   }
 
   render() {
+    const PeopleCards = this.props.People.map((Person,i) => {
+      return <Card key={i} {...Person} /> 
+    })
+    
     return (
-      <Card props = { this.state } />
+      <Aux>
+        <div className="People">
+          <div className="Cards">
+            {PeopleCards}
+          </div>
+          <div className="controls">
+            <CreatePerson />
+          </div>
+        </div>
+        { window.innerWidth > 899 ? <MapComponent c='map-wide' /> : null}
+      </Aux>
     )
   }
 }
