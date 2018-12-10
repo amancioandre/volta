@@ -8,7 +8,7 @@ const pictureUploader = (props, change) => {
       <div className="pictureUploader">
         <label>Choose a picture to send:</label>
         <input type="file" name="picture" onChange={e => props.change(e)}/>
-        <button onClick={props.submit}>Send</button>    
+        <button onClick={() => { props.submit(); props.show() }}>Send</button>    
       </div>
     </Aux>
   )

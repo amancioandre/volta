@@ -38,7 +38,7 @@ class SendPicture extends Component {
         <Backdrop 
           show={this.state.show}
           clicked={this.show} />
-        { this.state.show ? <PictureUploader change={this.handleChange} submit={this.handleSubmit}/> : null}
+        { this.state.show ? <PictureUploader change={this.handleChange} submit={this.handleSubmit} show={this.show}/> : null}
         <button
           onClick={() => {
             if (this.state.show && this.state.file !== null) {
