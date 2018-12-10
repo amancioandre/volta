@@ -9,23 +9,23 @@ class CrudService {
     this.service = service;
   }
 
-  // login (username, password) {
-  //   return this.service.post('/login', {username, password})
-  //   .then(response => response.data)
-  // }
-
-  // logout = () => {
-  //   return this.service.post('/logout', {})
-  //   .then(response => response.data)
-  // }
-
-  // loggedin = () => {
-  //   return this.service.get('/loggedin')
-  //   .then(response => response.data)
-  // }
-
   createPerson(person) {
     return this.service.post('/persons', { person })
+      .then(response => response.data);
+  }
+
+  editPerson(personId, person) {
+    return this.service.patch(`/persons/${personId}`, { person })
+      .then(response => response.data);
+  }
+
+  getPerson(personId) {
+    return this.service.get(`/persons/${personId}`)
+      .then(response => response.data);
+  }
+
+  deletePerson(personId) {
+    return this.service.delete(`/persons/${personId}`)
       .then(response => response.data);
   }
 }

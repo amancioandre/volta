@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-import Aux from '../../../hoc/Aux/Aux';
 import PrimaryInfo from '../FormBuildings/PrimaryInfo/PrimaryInfo';
 import SecundaryInfo from '../FormBuildings/SecundaryInfo/SecundaryInfo';
 import SubmitButton from '../FormBuildings/SubmitButton/SubmitButton';
