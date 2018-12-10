@@ -16,6 +16,7 @@ import Health from '../../../components/Forms/FormBuildings/Health/Health';
 import PositionController from '../../Controllers/GetPositionController/Controller';
 import SaveController from '../../Controllers/SavePersonController/Controller';
 import SendPicture from '../../Controllers/SendPictureController/Controller';
+import CrudServices from "../../crud/crud-services";
 
 class Person extends Component {
   constructor(props) {
@@ -30,6 +31,7 @@ class Person extends Component {
     };
     this.service = new Service();
 
+    this.service = new CrudServices();
     this.showMoreHandler = this.showMoreHandler.bind(this);
     this.handleChange = this.handleChange.bind(this);
   }

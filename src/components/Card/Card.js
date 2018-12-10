@@ -4,8 +4,14 @@ import { Link } from 'react-router-dom';
 import './Card.css';
 
 const Card = (props) => {
+
   return (
-    <Link to={'/dashboard/people/'+props._id} person={props}>
+    <Link to={{
+      pathname: '/dashboard/people/'+props._id,
+      state: {
+        props
+      }
+    }} person={props}>
       <div 
         className="Card">
         <img src= '/img/person_picture_alt.png' />
