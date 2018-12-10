@@ -47,13 +47,13 @@ class Search extends Component {
     return (
       <Form onSubmit = {this.search}>
         <Row form>
-        <FormGroup>
-          <Input type= "text" name="search" onChange={e => this.handleChange(e)}/>
+          <FormGroup>
+            <Input type= "text" name="search" onChange={e => this.handleChange(e)}/>
+            </FormGroup>
+          <FormGroup>
+            <Button buttonName = '🔎'/>
           </FormGroup>
-        <FormGroup>
-           <Button buttonName = '🔎'/>
-          </FormGroup>
-          </Row>
+        </Row>
       </Form>
      )
   }
