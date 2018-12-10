@@ -37,14 +37,6 @@ class MapComponent extends Component {
   }
   
   /* Life Cycle Methods */
-  componentDidMount() {
-    console.log("inside componentDidMount -> MapComponent")
-  }
-
-  componentWillUpdate() {
-    console.log('inside componentWillUpdate -> Map')
-  }
-
   render() {
 
     const position = [this.state.position.lat, this.state.position.lng];

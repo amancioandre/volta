@@ -39,6 +39,17 @@ class CrudService {
     return this.service.delete(`/people/${personId}`)
       .then(response => response.data);
   }
+
+  addPicture(personId, file) {
+    const formData = new FormData();
+    formData.append('picture', file);
+    return this.service.patch(`/people/${personId}`, formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data',
+      },
+    })
+      .then(response => response.data);
+  }
 }
 
 export default CrudService;
