@@ -35,6 +35,7 @@ class Person extends Component {
 
     this.showMoreHandler = this.showMoreHandler.bind(this);
     this.positionHandler = this.positionHandler.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
 
   /* Handler Methods */
@@ -42,8 +43,9 @@ class Person extends Component {
     this.setState({showMore: !this.state.showMore})
   }
 
-  editHandler(message) {
-    console.log(message)
+  handleChange(event) {
+    const { name, value } = event.target;
+    this.setState({ [name]: value });
   }
 
   positionHandler(coords) {
@@ -97,7 +99,7 @@ class Person extends Component {
               alt={this.state.person ? this.state.person.picture : 'Picture not found, please insert picture!'}/>
           </div>
           <div className="info">
-            <PrimaryInfo />
+            <PrimaryInfo {...this.state.person} change={this.handleChange}/>
             <SecundaryInfo />
             <button className="btn-show" onClick={this.showMoreHandler}>{ !this.state.showMore ? 'Show more' : 'Hide'}</button>
             {/* Conditioned to Viewer Action */ }

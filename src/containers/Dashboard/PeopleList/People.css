@@ -22,19 +22,20 @@
 @media (min-width: 900px) {
   .People {
     position: absolute;
-    top: 40px;
+    top: 45px;
     right: 10px;
     margin: 15px 0 0 0;
     width: 375px;
+    height: 100%;
     background-color: white;
     box-shadow: 2px -2px 6px #464C55, -2px 2px 6px #464C55;
-    z-index: 10;
+    z-index: 30;
   }
 
   .People .controls {
     width: 375px;
     position: fixed;
-    right: 100px;
+    right: 10px;
     bottom: -10px;
   }
 
@@ -42,7 +43,7 @@
     position: fixed;
     top: 60px;
     left: 0;
+    height: 100%;
     width: 100%;
-    z-index: -20;
   }
 }
