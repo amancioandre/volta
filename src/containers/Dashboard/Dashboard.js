@@ -55,8 +55,6 @@ class Dashboard extends Component {
   }
 
   render() {
-    console.log(this.state.People);
-
     return (
       <Aux>
         <Route

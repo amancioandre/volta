@@ -11,7 +11,7 @@ class CreatePerson extends Component {
     return (
       <Link 
         className='Controller CreatePerson'
-        to='/dashboard/people/add' >
+        to='/dashboard/people-add' >
         <img src="/img/icons/add-user.png" />
       </Link>
     )
