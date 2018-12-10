@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Service from '../../../../src/crud/crud-services';
 
 import './Person.css';
 
@@ -27,12 +28,11 @@ class Person extends Component {
         lat: -23.561679,
         lng: -46.660056,
       },
-      person: {}
-    },
+    };
+    this.service = new Service();
 
     this.service = new CrudServices();
     this.showMoreHandler = this.showMoreHandler.bind(this);
-    this.positionHandler = this.positionHandler.bind(this);
     this.handleChange = this.handleChange.bind(this);
   }
 
@@ -45,22 +45,10 @@ class Person extends Component {
     const { name, value } = event.target;
     this.setState({ [name]: value });
   }
-
-  positionHandler(coords) {
-    const { latitude, longitude } = coords;
-    this.setState({
-      position:
-     {
-      lat: latitude,
-      lng: longitude
-     }
-    })
-  }
   
   /* Lifecycle Methods */
-
   render() {
-    console.log
+    console.log('PERSON->',this.props)
     let moreInfo = (
         <Aux>
           <div>
@@ -83,7 +71,7 @@ class Person extends Component {
         <div className="Person">
           <div className="picture">
             <img className="profile-pic"
-              src={this.state.person ? '/img/person_picture_alt.png' : this.state.person.picture } 
+              src={this.state.person ? this.state.person.picture : '/img/person_picture_alt.png' } 
               alt={this.state.person ? this.state.person.picture : 'Picture not found, please insert picture!'}/>
           </div>
           <div className="info">
