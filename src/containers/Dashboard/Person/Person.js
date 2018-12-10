@@ -58,11 +58,6 @@ class Person extends Component {
   }
   
   /* Lifecycle Methods */
-  componentDidMount() {
-
-    this.setState({person: person
-    });
-  }
 
   render() {
     console.log
