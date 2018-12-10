@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class CreatePerson extends Component {
   constructor(props) {
@@ -8,10 +9,11 @@ class CreatePerson extends Component {
   render() {
 
     return (
-      <button 
-        className='Controller CreatePerson'>
+      <Link 
+        className='Controller CreatePerson'
+        to='/dashboard/people/add' >
         <img src="/img/icons/add-user.png" />
-      </button>
+      </Link>
     )
   }
 }

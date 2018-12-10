@@ -22,7 +22,7 @@
 @media (min-width: 900px) {
   .People {
     position: absolute;
-    top: 40px;
+    top: 45px;
     right: 10px;
     margin: 15px 0 0 0;
     width: 375px;
@@ -34,7 +34,7 @@
   .People .controls {
     width: 375px;
     position: fixed;
-    right: 100px;
+    right: 10px;
     bottom: -10px;
   }
 
