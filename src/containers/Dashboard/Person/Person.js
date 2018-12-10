@@ -15,6 +15,7 @@ import Health from '../../../components/Forms/FormBuildings/Health/Health';
 import PositionController from '../../Controllers/GetPositionController/Controller';
 import SaveController from '../../Controllers/SavePersonController/Controller';
 import SendPicture from '../../Controllers/SendPictureController/Controller';
+import CrudServices from "../../crud/crud-services";
 
 class Person extends Component {
   constructor(props) {
@@ -26,13 +27,10 @@ class Person extends Component {
         lat: -23.561679,
         lng: -46.660056,
       },
-      person: {
-        name: 'Andre',
-        lastName: 'Moraes',
-        age: '31'
-      }
-    }
+      person: {}
+    },
 
+    this.service = new CrudServices();
     this.showMoreHandler = this.showMoreHandler.bind(this);
     this.positionHandler = this.positionHandler.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -61,13 +59,8 @@ class Person extends Component {
   
   /* Lifecycle Methods */
   componentDidMount() {
-    this.setState({person: {
-      firstName: 'Teste',
-      lastName: 'Doll',
-      dateOfBirth: '31/12/1990',
-      updatedAt: '07/12/2018',
-      personId: '5c0e9aea9c52a34bc47dafed'
-      }
+
+    this.setState({person: person
     });
   }
 
