@@ -18,7 +18,7 @@ class Nav extends Component {
         <img src="/img/logo_placeholder.png" />
         <div>
           <p>Hello, Andre!</p>
-          {window.innerWidth > 900 ? <NavigationalItems /> : <img src="/img/icons/menu.png" onClick={this.props.showMenu} />}
+          <img src="/img/icons/menu.png" onClick={this.props.showMenu} />
         </div>      
       </nav>
     )

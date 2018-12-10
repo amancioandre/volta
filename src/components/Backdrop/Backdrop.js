@@ -23,7 +23,7 @@ class Backdrop extends Component {
         style={{
           display: this.props.show ? 'block' : 'none'
         }}
-        onClick={this.props.showBackdrop}>
+        onClick={this.props.showBackdrop || this.props.clicked}>
       </div>
     )
   }

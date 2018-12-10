@@ -60,16 +60,6 @@ class Person extends Component {
   }
   
   /* Lifecycle Methods */
-  componentDidMount() {
-    this.setState({person: {
-      firstName: 'Teste',
-      lastName: 'Doll',
-      dateOfBirth: '31/12/1990',
-      updatedAt: '07/12/2018',
-      personId: '5c0e9aea9c52a34bc47dafed'
-      }
-    });
-  }
 
   render() {
     console.log

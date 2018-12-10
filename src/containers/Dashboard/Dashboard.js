@@ -74,9 +74,6 @@ class Dashboard extends Component {
 
 
   /* Lifecycle Methods */
-  componentDidMount() {
-    console.log("inside componentDidMount -> Dashboard");
-  }
 
   render() {
     

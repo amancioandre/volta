@@ -3,6 +3,7 @@ import PictureUploader from '../../../components/Forms/FormBuildings/PictureUplo
 import Aux from '../../../hoc/Aux/Aux';
 
 import Service from '../../../crud/crud-services';
+import Backdrop from '../../../components/Backdrop/Backdrop';
 
 class SendPicture extends Component {
   constructor(props) {
@@ -18,7 +19,6 @@ class SendPicture extends Component {
   }
 
   handleChange(event) {
-
     this.setState({
       file: event.target.files[0],
     })
@@ -34,13 +34,17 @@ class SendPicture extends Component {
 
   render() {
     return (
-      
       <Aux>
-        { this.state.show ? <PictureUploader change={this.handleChange}/> : null}
+        <Backdrop 
+          show={this.state.show}
+          clicked={this.show} />
+        { this.state.show ? <PictureUploader change={this.handleChange} submit={this.handleSubmit}/> : null}
         <button
           onClick={() => {
-            if (this.state.show) {
+            if (this.state.show && this.state.file !== null) {
               this.handleSubmit();
+              this.show()
+            } else if (this.state.show) {
               this.show();
             } else {
               this.show();
