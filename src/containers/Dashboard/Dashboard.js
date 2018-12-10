@@ -28,6 +28,7 @@ class Dashboard extends Component {
       People: [],
       show: false
     };
+    this.handleSearch = this.handleSearch.bind(this);
     this.service = new CrudServices();
   }
   /* Handler Methods */
@@ -43,6 +44,16 @@ class Dashboard extends Component {
     });
   }
 
+  handleSearch(query) {
+    this.service.searchPerson(`${query}`).then((response)=>{
+      this.setState(
+        {People: response}
+      );
+    })
+
+
+  }
+
   render() {
     console.log(this.state.People);
 
@@ -55,7 +66,7 @@ class Dashboard extends Component {
         />
         <Route
           exact path="/dashboard/people"
-          render={() => <PeopleList {...this.state} />}
+          render={() => <PeopleList {...this.state} search={this.handleSearch} />}
         />
         <Route
           exact

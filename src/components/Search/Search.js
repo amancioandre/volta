@@ -15,10 +15,11 @@ class Search extends Component {
     }
     this.toggle = this.toggle.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.createQuery = this.createQuery.bind(this);
   }
 
   handleChange (event) {  
-    const {name, value} = event.target;
+    const {value} = event.target;
     this.setState({searchText: value});
     console.log(this.state);
   }
@@ -27,25 +28,15 @@ class Search extends Component {
     this.setState({ showFilter: !this.state.showFilter });
   }
 
-  search(text) {
+  createQuery() {
     event.preventDefault();
-    let searchArr = [];
-    text.forEach(element => {
-      searchArr.push(element);
-    });
-    query = {};
-    this.service
-      .searchPerson(query)
-      .then(response => {
-        this.setState({});
-        // this.props.getUser(response);
-      })
-      .catch(error => console.log(error));
+    this.props.search(this.state.searchText);
   }
+
 
   render() {
     return (
-      <Form onSubmit = {this.search}>
+      <Form onSubmit = {this.createQuery}>
         <Row form>
           <FormGroup>
             <Input type= "text" name="search" onChange={e => this.handleChange(e)}/>
