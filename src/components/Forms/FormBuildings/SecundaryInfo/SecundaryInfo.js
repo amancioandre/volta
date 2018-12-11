@@ -21,6 +21,7 @@ const SecundaryInfo = props => {
           name="alias"
           value={props.alias}
           onChange={e => props.change(e)}
+          required
         />
       </FormGroup>
       <FormGroup>
@@ -31,6 +32,7 @@ const SecundaryInfo = props => {
           onChange={e => props.change(e)}
           name="status"
           id="status"
+          required
         >
           <option value="Status1 aqui">Status aqui</option>
           <option value="Status2 aqui">Status aqui</option>
@@ -44,6 +46,7 @@ const SecundaryInfo = props => {
           id="sex"
           name="sex"
           onChange={e => props.change(e)}
+          required
         >
           <option value="Female">Female</option>
           <option value="Male">Male</option>

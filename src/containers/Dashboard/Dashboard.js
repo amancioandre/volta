@@ -30,6 +30,7 @@ class Dashboard extends Component {
     };
     this.handleSearch = this.handleSearch.bind(this);
     this.service = new CrudServices();
+    this.refreshData = this.refreshData.bind(this);
   }
   /* Handler Methods */
   handleSearch(query) {
@@ -40,14 +41,19 @@ class Dashboard extends Component {
     })
   }
 
-  /* Lifecycle Methods */
-  componentDidMount() {
+  refreshData() {
+    console.log('refresh data')
     let people = [];
     this.service.getAll().then(response => {
-      console.log('dashboard-> ',people)
       people = response;
       this.setState({ People: people });
+      console.log('refreshData ->>', people)
     });
+  }
+
+  /* Lifecycle Methods */
+  componentDidMount() {
+    this.refreshData();
   }
 
   render() {
@@ -56,11 +62,11 @@ class Dashboard extends Component {
         <Route
           exact
           path="/dashboard/people/:personId"
-          render={props => <Person {...props} />}
+          render={props => <Person {...props} refresh={this.refreshData} />}
         />
         <Route
           exact path="/dashboard/people"
-          render={() => <PeopleList {...this.state} search={this.handleSearch} />}
+          render={() => <PeopleList people={this.state.People} search={this.handleSearch} />}
         />
         <Route
           exact

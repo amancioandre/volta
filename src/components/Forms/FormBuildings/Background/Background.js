@@ -28,17 +28,23 @@ const Background = props => {
         <option value="Master">
           Master
         </option>
+        <option value="PhD">
+          PhD
+        </option>
+        <option value="Unknown">
+          Unknown
+        </option>
       </Input>
       <Label for='maritalStatus'>Marital Status:</Label>
       <Input type='select' id = 'maritalStatus' name="maritalStatus" onChange={e => props.change(e)}>
-        <option value="maried">
+        <option value="Maried">
           Maried
         </option>
-        <option value="single">
+        <option value="Single">
           Single
         </option>
-        <option value="widwed">
-          Widwed
+        <option value="Widowed">
+          Widowed
         </option>
       </Input>
     </FormGroup>

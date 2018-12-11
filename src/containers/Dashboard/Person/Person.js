@@ -16,6 +16,7 @@ import Health from '../../../components/Forms/FormBuildings/Health/Health';
 import PositionController from '../../Controllers/GetPositionController/Controller';
 import SaveController from '../../Controllers/SavePersonController/Controller';
 import SendPicture from '../../Controllers/SendPictureController/Controller';
+import DeletePerson from '../../Controllers/DeletePersonController/Controller';
 
 class Person extends Component {
   constructor(props) {
@@ -24,56 +25,40 @@ class Person extends Component {
     this.state = {
       showMore: false,
       person: {
-        name: {
-          firstName: '',
-          lastName: '',
-          alias: '',
-        },
-        dateOfBirth: Date,
-        status: '',
-        sex: '',
-        locations: {
-          ofBirth: {
-            city: '',
-            address: '',
-            state: '',
-            zip: Number,
-          },
-          geoReferences: [{ lat: 0, lng: 0 }],
-        },
-        background: {
-          profession: '',
-          degree: 'Non-alphabetized',
-          maritalStatus: 'maried',
-        },
-        picture: {
-          picName: '',
-          picPath: '',
-        },
-        appearance: {
-          bodyType: 'Skinny',
-          eyeColor: 'Brown',
-          skinColor: 'Black',
-          hairType: '',
-          height: 0,
-          weight: 0,
-          tattoos: '',
-        },
-        health: {
-          drugs: true,
-          amputhee: 'No',
-          mental: '',
-          diseases: '',
-        },
-        documents: {
-          registry: 0,
-          economicReg: 0,
-          driverLicense: 0,
-          birthCertificate: 0,
-          professionalLicense: 0,
-        },
+        firstName: 'Insira o primeiro nome',
+        lastName: 'Último nome',
+        alias: 'Apelido',
+        dateOfBirth: '13-01-1991',
+        status: 'Vivo',
+        sex: 'Masculino',
+        city: 'São Paulo',
+        address: 'Al. Jaú, 1301',
+        state: 'São Paulo',
+        zip: 1420001,
+        geoReferences: [{ lat: 0, lng: 0 }],
+        profession: 'Ironhacker',
+        degree: 'Non-alphabetized',
+        maritalStatus: 'maried',
+        picName: 'Avatar',
+        picPath: 'https://res.cloudinary.com/stormamnc/image/upload/v1544470625/volta-api/people/person_picture_alt.png',
+        bodyType: 'Skinny',
+        eyeColor: 'Brown',
+        skinColor: 'Black',
+        hairType: 'Long',
+        height: 174,
+        weight: 65,
+        tattoos: 'Variadas',
+        drugs: true,
+        amputhee: 'No',
+        mental: 'No',
+        diseases: 'No',
+        registry: 123456789,
+        economicReg: 123456798,
+        driverLicense: 123456798,
+        birthCertificate: 12346579,
+        professionalLicense: 123465798,
       },
-      refresh: true,
+    refresh: true,
     };
 
     this.service = new Service();
@@ -81,30 +66,34 @@ class Person extends Component {
     this.getPositionHandler = this.getPositionHandler.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.refreshData = this.refreshData.bind(this);
+    this.saveEdit = this.saveEdit.bind(this);
   }
 
   /* Handler Methods */
   showMoreHandler() {
-    this.setState({showMore: !this.state.showMore})
+    this.setState({ showMore: !this.state.showMore })
   }
 
   handleChange(event) {
+    const  { person } = this.state
     const { name, value } = event.target;
-    this.setState({ [name]: value });
+    person[name] = value;
+    this.setState({ person });
   }
 
   getPositionHandler(coords) {
-    console.log(coords)
     const newPos = { lat: coords.latitude, lng: coords.longitude };
-    const { geoReferences } = this.state.person.locations;
+    const { geoReferences } = this.state.person;
     geoReferences.push(newPos);
 
     this.setState({ geoReferences }, () => {
-      this.service.addPosition(this.props.match.params.personId, this.state.person.locations.geoReferences);
+      this.service.addPosition(this.props.match.params.personId, this.state.person.geoReferences)
+        .then(res => this.refreshData());
     })
   }
 
-  saveEditToDatabase() {
+  saveEdit() {
+    console.log('saveEdit', this.props.match.params)
     const { personId } = this.props.match.params
     const { person } = this.state
     this.service.editPerson(personId, person)
@@ -114,76 +103,121 @@ class Person extends Component {
   refreshData() {
     const { personId } = this.props.match.params
     this.service.getPerson(personId)
-      .then(person => this.setState({ person }))
+      .then(person => {
+        const newPerson = {
+          firstName: person.name.firstName || '',
+          lastName: person.name.lastName || '',
+          alias: person.name.alias || '',
+          dateOfBirth: person.dateOfBirth || '',
+          status: person.status || '',
+          sex: person.sex || '',
+          city: person.locations.ofBirth.city || '',
+          address: person.locations.ofBirth.address || '',
+          state: person.locations.ofBirth.state || '',
+          zip: person.locations.ofBirth.zip || '',
+          geoReferences: person.locations.geoReferences || [{ lat: 0, lng: 0 }],
+          profession: person.background.profession || '',
+          degree: person.background.degree || '',
+          maritalStatus: person.background.maritalStatus || '',
+          picName: person.picture.picName || '',
+          picPath: person.picture.picPath || '',
+          bodyType: person.appearance.bodyType || '',
+          eyeColor: person.appearance.eyeColor || '',
+          skinColor: person.appearance.skinColor || '',
+          hairType: person.appearance.hairType || '',
+          height: person.appearance.height || '',
+          weight: person.appearance.weight || '',
+          tattoos: person.appearance.tattoos || '',
+          drugs: person.health.drugs || '',
+          amputhee: person.health.amputhee || '',
+          mental: person.health.mental || '',
+          diseases: person.health.diseases || '',
+          registry: person.documents.registry || '',
+          economicReg: person.documents.economicReg || '',
+          driverLicense: person.documents.driverLicense || '',
+          birthCertificate: person.documents.birthCertificate || '',
+          professionalLicense: person.documents.professionalLicense || '',
+          };
+        this.setState({ person: newPerson });
+      });
   }
-  
+
   /* Lifecycle Methods */
   componentDidMount() {
     this.refreshData();
-  }
+   }
 
   render() {
     const { person } = this.state;
-    console.log(person)
+
     let moreInfo = (
-        <Aux>
-          <div>
-            <h3>Documents</h3>
-            <Documents {...person.documents}/>
-          </div>
-          <div>
-            <h3>Appearance</h3>
-            <Appearance {...person.appearance}/>
-          </div>
-          <div>
-            <h3>Health Condidition</h3>
-            <Health {...person.health}/>
-          </div>
-        </Aux>
-      )
-    
+      <Aux>
+        <div>
+          <h3>Documents</h3>
+          <Documents
+            {...person} 
+            change={this.handleChange}/>
+        </div>
+        <div>
+          <h3>Appearance</h3>
+          <Appearance 
+            {...person} 
+            change={this.handleChange}/>
+        </div>
+        <div>
+          <h3>Health Condidition</h3>
+          <Health 
+            {...person} 
+            change={this.handleChange}/>
+        </div>
+      </Aux>
+    )
+
     return (
       <Aux>
         <div className="Person">
           <div className="picture">
             <img className="profile-pic"
-              src={person.picture.picPath} 
-              alt={person.picture.picName}/>
+              src={person.picPath}
+              alt={person.picName} />
           </div>
           <div className="info">
-            <PrimaryInfo 
-              { ...person.name }
-              change={this.handleChange}/>
-            <SecundaryInfo 
-              { ...person.name } { ...person.locations.ofBirth }
+            <PrimaryInfo
+              {...person}
+              change={this.handleChange} />
+            <SecundaryInfo
+              {...person}
               change={this.handleChange} />
 
-            <button 
-              className="btn-show" 
+            <button
+              className="btn-show"
               onClick={this.showMoreHandler}>
-                { !this.state.showMore ? 'Show more' : 'Hide'}
+              {!this.state.showMore ? 'Show more' : 'Hide'}
             </button>
 
-            {/* Conditioned to Viewer Action */ }
+            {/* Conditioned to Viewer Action */}
             {this.state.showMore ? moreInfo : null}
           </div>
 
           <div className="controls">
-            <SaveController 
-              savePerson={this.savePerson}/>
-            
+            <DeletePerson 
+              personId={this.props.match.params.personId} 
+              refresh={this.props.refresh}/>
+
+            <SaveController
+              savePerson={this.saveEdit} />
+
             <PositionController
               getPosition={this.getPositionHandler} />
-            
-            <SendPicture 
-              personId={this.props.match.params.personId}
-              refresh={this.refreshData}/>
+
+            <SendPicture
+              personId={this.props.match.params.personId} />
           </div>
         </div>
-        <MapComponent 
+        <MapComponent
           c='map-bottom'
-          position={this.state.person ? this.state.person.locations.geoReferences[0] : { lat: 0, lng: 0 }}
-          {...this.state.person} />
+          geoReferences={person.geoReferences}
+          people={[person]} />
       </Aux>
     )
   }

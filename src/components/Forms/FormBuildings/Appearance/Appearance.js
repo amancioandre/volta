@@ -8,7 +8,7 @@ const Appearance = props => {
   return (
     <FormGroup>
       <Label>Body type:</Label>
-      <Input type= "select" name="bodyType" onChange={e => props.change(e)}>
+      <Input type= "select" required name="bodyType" onChange={e => props.change(e)}>
         <option value="skinny">
           Skinny
         </option>
@@ -20,7 +20,7 @@ const Appearance = props => {
         </option>
       </Input>
       <Label>Eye color:</Label>
-      <Input type= "select" name="eyeColor" onChange={e => props.change(e)}>
+      <Input type= "select" required name="eyeColor" onChange={e => props.change(e)}>
         <option value="brown">
           Brown
         </option>
@@ -32,31 +32,31 @@ const Appearance = props => {
         </option>
       </Input>
       <Label>Skin Color:</Label>
-      <Input type= "select" name="skinColor" onChange={e => props.change(e)}>
-        <option value="black">
+      <Input type= "select" required name="skinColor" onChange={e => props.change(e)}>
+        <option value="Black">
           Black
         </option>
-        <option value="dark brow">
+        <option value="Bark Brow">
           Dark Brow
         </option>
-        <option value="brown">
+        <option value="Brown">
           Brown
         </option>
-        <option value="yellow">
+        <option value="Yellow">
           Yellow
         </option>
-        <option value="caucasian">
+        <option value="Caucasian">
           Caucasian
         </option>
       </Input>
       <Label>Hair Type:</Label>
-      <Input type="text" name="hairType" value={ props.hairType } onChange={ e => props.change(e)}/>  
+      <Input type="text" name="hairType" required value={ props.hairType } onChange={ e => props.change(e)}/>  
       <Label>Height:</Label>
-      <Input type="number" name="height" value={ props.height } onChange={ e => props.change(e)}/> <span>kg</span>  
+      <Input type="number" name="height" required value={ props.height } onChange={ e => props.change(e)}/> <span>kg</span>  
       <Label>Weight:</Label>
-      <Input type="text" name="weight" value={ props.weight } onChange={ e => props.change(e)}/> <span>m</span> 
+      <Input type="text" name="weight" required value={ props.weight } onChange={ e => props.change(e)}/> <span>m</span> 
       <Label>Tattoos:</Label>
-      <Input type="textarea" name="tattoos" value={ props.tattoos } onChange={ e => props.change(e)}/>   
+      <Input type="textarea" name="tattoos" required value={ props.tattoos } onChange={ e => props.change(e)}/>   
     </FormGroup>
   );
 };

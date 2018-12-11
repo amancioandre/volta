@@ -7,36 +7,28 @@ import Search from "../../../components/Search/Search";
 
 import "./People.css";
 
-class PeopleList extends Component {
-  constructor(props) {
-    super(props);
+const peopleList = (props) => {
 
-    this.state = {
-      show: false
-    };
-  }
+  const PeopleCards = props.people.map((person, i) => {
+    return <Card key={i} {...person} />;
+  });
 
-  render() {
-    console.log(this.props.People);
-    const PeopleCards = this.props.People.map((Person, i) => {
-      return <Card key={i} {...Person} />;
-    });
-
-    return (
-      <Aux>
-        <div className="People">
-          <div>
-            <Search search = {this.props.search} />
-          </div>
-          <div className="Cards">{PeopleCards}</div>
-          <div className="controls">
-            <CreatePerson />
-          </div>
+  return (
+    <Aux>
+      <div className="People">
+        <div>
+          <Search search = {props.search} />
         </div>
-        {window.innerWidth > 899 ? <MapComponent c="map-wide" /> : null}
-      </Aux>
-    );
-  }
+        <div className="Cards">{PeopleCards}</div>
+        <div className="controls">
+          <CreatePerson />
+        </div>
+      </div>
+      {window.innerWidth > 899 ? <MapComponent 
+                                    c="map-wide" 
+                                    people={props.people}/> : null}
+    </Aux>
+  );
 }
 
-export default PeopleList;
+export default peopleList;

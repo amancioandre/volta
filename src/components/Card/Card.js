@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import './Card.css';
+import DeletePerson from '../../containers/Controllers/DeletePersonController/Controller';
   
   const Card = (props) => {
     const person = props;
@@ -13,8 +14,7 @@ import './Card.css';
     <Link to={{
       pathname: '/dashboard/people/'+props._id,
       state:person,
-    }}>
-      {console.log(props)}
+      }}>
       <div 
         className="Card">
         <img src= {props.picture.picPath} />
@@ -27,6 +27,12 @@ import './Card.css';
           <p>{ AjustDate(props.dateOfBirth) }</p>
           <h3>Last update</h3>
           <p>{ AjustDate(props.Updated_at) }</p>
+        </div>
+        <div className="controls">
+          <DeletePerson 
+            personId={props._id}
+            // refresh={props.refresh}
+            />
         </div>
       </div>
     </Link>
