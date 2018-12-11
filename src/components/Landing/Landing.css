@@ -14,9 +14,16 @@
 
 .Landing h1 {
   font-size: 3rem;
-  font-family: cursive;
+  font-family: Arial, Helvetica, sans-serif;
   text-align: center;
-  color: rgba(198, 91, 124, 1);
+  color: white;
+}
+
+.Landing h4 {
+  width: 60%;
+  font-size: 1.2rem;
+  margin: 15px 0;
+  text-align: center;
 }
 
 .Landing button {
@@ -25,13 +32,20 @@
   display: inline-block;
   width: 80px;
   height: 40px;
-  border-radius: 20%;
+  border-radius: 10px;
   border: none;
   box-shadow: 2px 2px rgba(0,0,0,0.5);
   font-weight: 800;
   text-transform: uppercase;
-  background-color: rgba(198, 91, 124, 1);
-  color: white;
+  background-color: #72FFD7;
+  color: black;
+}
+
+.Landing a,
+.Landing a:hover,
+.Landing a:visited {
+  text-decoration: none;
+  color: black;
 }
 
 .Landing p {
@@ -43,4 +57,15 @@
   color: white;
   position: absolute;
   bottom: 40px;
+}
+
+.Slides {
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin: 90px;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  background-color: yellow;
 }
