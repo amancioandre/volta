@@ -20,7 +20,15 @@ class app extends Component {
     this.state = { loggedInUser: null };
     this.service = new AuthService();
     this.getTheUser = this.getTheUser.bind(this);
+    this.resetState = this.resetState.bind(this);
   };
+
+  resetState(){
+    this.setState({ loggedInUser: null }, () => {
+      console.log(this.state);
+    });
+
+  }
 
   fetchUser(){
     if( this.state.loggedInUser === null ){
@@ -47,12 +55,12 @@ class app extends Component {
 
   render() {
     this.fetchUser()
-    console.log(this.state.loggedInUser);
+    console.log('^^^^^^^', this.state.loggedInUser);
     if(this.state.loggedInUser){
     return(
     <Aux>
       <BrowserRouter>
-        <Layout user= { this.state.loggedInUser }>
+        <Layout user={this.state.loggedInUser} resetState={this.resetState}>
           <Switch>
             <Route exact path='/person' component={FormPerson} />
             <Route exact path='/' component={Landing} />

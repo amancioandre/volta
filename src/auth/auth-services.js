@@ -14,10 +14,10 @@ class AuthService {
       .then(response => response.data);
   }
 
-  // logout = () => {
-  //   return this.service.post('/logout', {})
-  //   .then(response => response.data)
-  // }
+  logout() {
+    return this.service.get('users/logout', {})
+      .then(response => response.data);
+  }
 
   loggedin() {
     return this.service.get('/users/loggedin')

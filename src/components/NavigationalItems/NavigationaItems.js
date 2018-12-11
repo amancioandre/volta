@@ -1,9 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import AuthServices from '../../auth/auth-services';
 import './NavigationalItems.css';
 
+const service = new AuthServices();
+
+
+
 const navigationalItems = (props) => {
+ 
+  const clickHandler = () => {
+    console.log('@@@@');
+    service.logout();
+    props.resetState();
+  };
+
   console.log('@@@@@',props.user);
   if(props.user){
     return (
@@ -26,7 +37,11 @@ const navigationalItems = (props) => {
           </li>
 
           <li>About</li>
-          <li>Logout</li>
+          <li>
+          <Link to='/' onClick={clickHandler}>
+              Logout 
+            </Link>
+            </li>
         </ul>
       </div>
     )

@@ -1,7 +1,4 @@
 import React, { Component } from 'react';
-
-import NavigationalItems from '../NavigationalItems/NavigationaItems';
-
 import './Nav.css'
 
 class Nav extends Component {
@@ -9,8 +6,6 @@ class Nav extends Component {
     super(props) 
 
   }
-
-
 
   render() {
     return (

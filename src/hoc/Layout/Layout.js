@@ -27,7 +27,8 @@ class Layout extends Component {
         <Menu
           showMenu = {this.show}
           show = {this.state.show}
-          user = {this.props.user} />
+          user = {this.props.user} 
+          resetState ={this.props.resetState} />
         <Backdrop
           show={this.state.show}
           showBackdrop={this.show} /> 
