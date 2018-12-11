@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
-import Card from '../../../components/Card/Card'
-import CreatePerson from '../../Controllers/CreatePersonController/Controller';
-import MapComponent from '../../Map/Map';
-import Aux from '../../../hoc/Aux/Aux';
-import Search from '../../../components/Search/Search';
+import React, { Component } from "react";
+import Card from "../../../components/Card/Card";
+import CreatePerson from "../../Controllers/CreatePersonController/Controller";
+import MapComponent from "../../Map/Map";
+import Aux from "../../../hoc/Aux/Aux";
+import Search from "../../../components/Search/Search";
 
-import './People.css'
+import "./People.css";
 
 class PeopleList extends Component {
   constructor(props) {
@@ -13,29 +13,28 @@ class PeopleList extends Component {
 
     this.state = {
       show: false
-    }
+    };
   }
 
   render() {
-    const PeopleCards = this.props.People.map((Person,i) => {
-      return <Card key={i} {...Person} /> 
-    })
-    
+    const PeopleCards = this.props.People.map((Person, i) => {
+      return <Card key={i} {...Person} />;
+    });
+
     return (
       <Aux>
-
         <div className="People">
-          <Search/>
-          <div className="Cards">
-            {PeopleCards}
+          <div>
+            <Search search = {this.props.search} />
           </div>
+          <div className="Cards">{PeopleCards}</div>
           <div className="controls">
             <CreatePerson />
           </div>
         </div>
-        { window.innerWidth > 899 ? <MapComponent c='map-wide' /> : null}
+        {window.innerWidth > 899 ? <MapComponent c="map-wide" /> : null}
       </Aux>
-    )
+    );
   }
 }
 

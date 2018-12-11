@@ -9,6 +9,11 @@ import Health from '../FormBuildings/Health/Health';
 import Documents from '../FormBuildings/Documents/Documents';
 import { Form } from 'reactstrap';
 import CrudServices from '../../../crud/crud-services';
+
+import {
+	withRouter
+} from 'react-router-dom';
+
 // CSS
 // import './FormSignUp.css';
 
@@ -32,7 +37,6 @@ class FormPerson extends Component {
       .createPerson(person)
       .then(response => {
         this.setState({});
-        // this.props.getUser(response);
       })
       .catch(error => console.log(error));
   }
@@ -59,4 +63,4 @@ class FormPerson extends Component {
 
 }
 
-export default FormPerson;
+export default withRouter(FormPerson);

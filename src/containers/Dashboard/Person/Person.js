@@ -72,13 +72,15 @@ class Person extends Component {
           birthCertificate: 0,
           professionalLicense: 0,
         },
-      }
+      },
+      refresh: true,
     };
 
     this.service = new Service();
     this.showMoreHandler = this.showMoreHandler.bind(this);
     this.positionHandler = this.positionHandler.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.refreshData = this.refreshData.bind(this);
   }
 
   /* Handler Methods */
@@ -102,11 +104,16 @@ class Person extends Component {
     })
   }
   
+  refreshData() {
+    console.log('inside refreshData')
+    const { personId } = this.props.match.params
+    this.service.getPerson(personId)
+      .then(person => this.setState({ person }))
+  }
+  
   /* Lifecycle Methods */
   componentDidMount() {
-    const person = this.props.location.state
-    console.log(person)
-    this.setState({ person })
+    this.refreshData();
   }
 
   render() {
@@ -163,7 +170,8 @@ class Person extends Component {
               getPosition={this.positionHandler} />
             
             <SendPicture 
-              personId={this.props.match.params.personId}/>
+              personId={this.props.match.params.personId}
+              refresh={this.refreshData}/>
           </div>
         </div>
         <MapComponent 
