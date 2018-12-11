@@ -7,9 +7,10 @@ import FormSignUp from '../Forms/FormSignUp/FormSignUp';
 import './Signup.css';
 
 const Signup = (props) => {
+  console.log ('@@@@@@@', props);
   return(
     <Aux>
-      <FormSignUp/>
+      <FormSignUp getUser = {props.getUser}/>
     </Aux>
   )
 }

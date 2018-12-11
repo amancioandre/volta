@@ -19,10 +19,10 @@ class AuthService {
   //   .then(response => response.data)
   // }
 
-  // loggedin = () => {
-  //   return this.service.get('/loggedin')
-  //   .then(response => response.data)
-  // }
+  loggedin() {
+    return this.service.get('/users/loggedin')
+      .then(response => response.data);
+  }
 
   signup(user) {
     return this.service.post('/users', { user })
