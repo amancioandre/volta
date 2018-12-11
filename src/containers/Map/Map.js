@@ -33,7 +33,10 @@ class MapComponent extends Component {
   render() {
     let pos;
     let zoom;
-    this.props.geoReferences.length > 0 ? zoom = 18 : zoom = 2;
+    let test
+    console.log('PEOPLE --->', this.props.people)
+    this.props.geoReferences ? test = this.props.geoReferences : test = [];
+    test > 0 ? zoom = 18 : zoom = 2;
     
     let pins = this.props.people.map((person, i) => {
       
