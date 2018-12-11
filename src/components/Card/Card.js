@@ -15,10 +15,10 @@ const Card = (props) => {
       state: {
         props
       }
-    }} person={props}>
+    }} person = { props }>
       <div 
         className="Card">
-        <img src= '/img/person_picture_alt.png' />
+        <img src= {props.picture.picPath} />
         <div className="basic-info">
           <h3>First Name:</h3>
           <p>{ props.name.firstName }</p>
