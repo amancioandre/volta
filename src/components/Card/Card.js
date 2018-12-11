@@ -2,20 +2,18 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import './Card.css';
-
-const AjustDate = (dateBd) => {
-  let date = new Date (dateBd);
-  return `${date.getDate()}/${date.getMonth()}/${date.getYear()}`
-}
-
-const Card = (props) => {
-  return (
+  
+  const Card = (props) => {
+    const person = props;
+    const AjustDate = (dateBd) => {
+    let date = new Date (dateBd);
+    return `${date.getDate()}/${date.getMonth()}/${date.getYear()}`
+  }
+    return (
     <Link to={{
       pathname: '/dashboard/people/'+props._id,
-      state: {
-        props
-      }
-    }} person = { props }>
+      state: person
+    }}>
       <div 
         className="Card">
         <img src= {props.picture.picPath} />

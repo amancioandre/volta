@@ -43,12 +43,12 @@ class CrudService {
   addPicture(personId, file) {
     const formData = new FormData();
     formData.append('picture', file);
-    return this.service.patch(`/people/${personId}`, formData, {
+    return this.service.patch(`/people/${personId}/picture`, formData, {
       headers: {
         'Content-Type': 'multipart/form-data',
       },
     })
-      .then(response => response.data);
+      .then(response => console.log(response.data));
   }
 }
 
