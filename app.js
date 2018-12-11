@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { BrowserRouter, Route, ProtectedRoute, Switch } from 'react-router-dom';
 import 'leaflet/dist/leaflet.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -11,23 +11,74 @@ import Landing from './src/components/Landing/Landing';
 import Signup from './src/components/Signup/Signup';
 import SignIn from './src/components/SignIn/SignIn';
 import FormPerson from './src/components/Forms/FormPerson/FormPerson';
+import AuthService from './src/auth/auth-services';
 
-const app = (props) => {
-  return (
+class app extends Component {
+  constructor (props) {
+    super(props);
+    this.state = { loggedInUser: null };
+    this.service = new AuthService();
+    this.getTheUser = this.getTheUser.bind(this);
+  };
+
+  fetchUser(){
+    if( this.state.loggedInUser === null ){
+      this.service.loggedin()
+      .then(response =>{
+        this.setState({
+          loggedInUser:  response
+        }) 
+      })
+      .catch( err =>{
+        this.setState({
+          loggedInUser:  false
+        }) 
+      })
+    }
+  }
+
+  getTheUser(userObj) {
+    this.setState({
+      loggedInUser: userObj
+    })
+  }
+
+
+  render() {
+    this.fetchUser()
+    if(this.state.loggedInUser){
+    return(
     <Aux>
       <BrowserRouter>
         <Layout>
+          TO LOGADO!!!!
           <Switch>
             <Route exact path='/person' component={FormPerson} />
             <Route exact path='/' component={Landing} />
-            <Route exact path='/signup' component={Signup}/> 
+            <Route exact path='/signup'  render={() => <Signup getUser={this.getTheUser}/>}/>
             <Route exact path='/login' component={SignIn} />
             <Route path='/dashboard' component={Dashboard} />
           </Switch>
         </Layout>
       </BrowserRouter>
     </Aux>
-  )
-}
-
+    )}else{
+      return(
+        <Aux>
+          <BrowserRouter>
+            <Layout>
+              <Switch>
+                <Route exact path='/person' component={FormPerson} />
+                <Route exact path='/' component={Landing} />
+                <Route exact path='/signup' component={Signup}/> 
+                <Route exact path='/login' component={SignIn} />
+                <Route path='/dashboard' component={Dashboard} />
+              </Switch>
+            </Layout>
+          </BrowserRouter>
+        </Aux>
+      )
+    }
+  };
+};
 export default app;
