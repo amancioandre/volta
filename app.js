@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route, ProtectedRoute, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import 'leaflet/dist/leaflet.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './app.css';
@@ -12,6 +12,7 @@ import Signup from './src/components/Signup/Signup';
 import SignIn from './src/components/SignIn/SignIn';
 import FormPerson from './src/components/Forms/FormPerson/FormPerson';
 import AuthService from './src/auth/auth-services';
+import ProtectedRoute from './src/components/ProtectedRoutes/ProtectedRoutes'
 
 class app extends Component {
   constructor (props) {
@@ -46,18 +47,19 @@ class app extends Component {
 
   render() {
     this.fetchUser()
+    console.log(this.state.loggedInUser);
     if(this.state.loggedInUser){
     return(
     <Aux>
       <BrowserRouter>
-        <Layout>
-          TO LOGADO!!!!
+        <Layout user= { this.state.loggedInUser }>
           <Switch>
             <Route exact path='/person' component={FormPerson} />
             <Route exact path='/' component={Landing} />
-            <Route exact path='/signup'  render={() => <Signup getUser={this.getTheUser}/>}/>
-            <Route exact path='/login' component={SignIn} />
-            <Route path='/dashboard' component={Dashboard} />
+            <Route exact path='/signup'  render={() => <Signup getUser = { this.getTheUser }/>}/>
+            <Route exact path='/login' render={() => <SignIn getUser = { this.getTheUser }/>}/> />
+            <ProtectedRoute user={this.state.loggedInUser} path="/dashboard" component={Dashboard}/>
+            {/* <Route path='/dashboard' component={Dashboard} /> */}
           </Switch>
         </Layout>
       </BrowserRouter>
@@ -70,9 +72,8 @@ class app extends Component {
               <Switch>
                 <Route exact path='/person' component={FormPerson} />
                 <Route exact path='/' component={Landing} />
-                <Route exact path='/signup' component={Signup}/> 
-                <Route exact path='/login' component={SignIn} />
-                <Route path='/dashboard' component={Dashboard} />
+                <Route exact path='/signup'  render={() => <Signup getUser = { this.getTheUser }/>}/>
+                <Route exact path='/login' render={() => <SignIn getUser = { this.getTheUser }/>}/> />                
               </Switch>
             </Layout>
           </BrowserRouter>

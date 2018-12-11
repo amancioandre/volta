@@ -46,6 +46,7 @@ class FormSignUp extends Component {
   }
 
   render() {
+    console.log(this.props);
     return (
       <Form onSubmit= {this.handleFormSubmit}>
         <PrimaryInfo state={this.state} change={this.handleChange} />

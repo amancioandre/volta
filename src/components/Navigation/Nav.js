@@ -17,7 +17,6 @@ class Nav extends Component {
       <nav className="Nav">
         <img src="/img/logo_placeholder.png" />
         <div>
-          <p>Hello, Andre!</p>
           <img src="/img/icons/menu.png" onClick={this.props.showMenu} />
         </div>      
       </nav>

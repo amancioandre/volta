@@ -9,7 +9,7 @@ import './signIn.css';
 const SignIn = (props) => {
   return(
     <Aux>
-      <FormSignIn/>
+      <FormSignIn getUser = {props.getUser}/>
     </Aux>
   )
 }
