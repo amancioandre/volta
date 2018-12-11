@@ -17,6 +17,7 @@ class PeopleList extends Component {
   }
 
   render() {
+    console.log(this.props.People);
     const PeopleCards = this.props.People.map((Person, i) => {
       return <Card key={i} {...Person} />;
     });

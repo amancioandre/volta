@@ -38,8 +38,8 @@ class Dashboard extends Component {
     console.log("inside componentDidMount -> Dashboard");
     let people = [];
     this.service.getAll().then(response => {
+      console.log(response);
       people = response;
-      console.log(people);
       this.setState({ People: people });
     });
   }

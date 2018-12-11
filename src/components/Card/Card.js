@@ -12,8 +12,9 @@ import './Card.css';
     return (
     <Link to={{
       pathname: '/dashboard/people/'+props._id,
-      state: person
+      state:person,
     }}>
+      {console.log(props)}
       <div 
         className="Card">
         <img src= {props.picture.picPath} />
