@@ -32,26 +32,22 @@ class Dashboard extends Component {
     this.service = new CrudServices();
   }
   /* Handler Methods */
-
-  /* Lifecycle Methods */
-  componentDidMount() {
-    console.log("inside componentDidMount -> Dashboard");
-    let people = [];
-    this.service.getAll().then(response => {
-      console.log(response);
-      people = response;
-      this.setState({ People: people });
-    });
-  }
-
   handleSearch(query) {
     this.service.searchPerson(`${query}`).then((response)=>{
       this.setState(
         {People: response}
       );
     })
+  }
 
-
+  /* Lifecycle Methods */
+  componentDidMount() {
+    let people = [];
+    this.service.getAll().then(response => {
+      console.log('dashboard-> ',people)
+      people = response;
+      this.setState({ People: people });
+    });
   }
 
   render() {

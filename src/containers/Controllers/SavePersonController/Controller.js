@@ -7,7 +7,7 @@ const savePersonEdit = (props) => {
     return (
       <button 
         className="Controller"
-        onClick={this.props.savePerson}>
+        onClick={props.savePerson}>
         <img src="/img/icons/cloud-computing.png" />
       </button>
     )

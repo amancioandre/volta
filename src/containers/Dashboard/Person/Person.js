@@ -112,7 +112,6 @@ class Person extends Component {
   }
   
   refreshData() {
-    console.log('inside refreshData')
     const { personId } = this.props.match.params
     this.service.getPerson(personId)
       .then(person => this.setState({ person }))
@@ -125,7 +124,7 @@ class Person extends Component {
 
   render() {
     const { person } = this.state;
-
+    console.log(person)
     let moreInfo = (
         <Aux>
           <div>
