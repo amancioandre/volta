@@ -26,7 +26,10 @@ class SendPicture extends Component {
 
   handleSubmit() {
     this.service.addPicture(this.props.personId, this.state.file)
-      .then(response => this.props.refresh )
+      .then(response => {
+        this.props.refresh();
+        this.show();
+      })
   }
   
   show() {

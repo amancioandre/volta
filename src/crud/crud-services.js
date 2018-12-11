@@ -40,6 +40,11 @@ class CrudService {
       .then(response => response.data);
   }
 
+  addPosition(personId, position) {
+    return this.service.patch(`/people/${personId}/position`, { position })
+    .then(response => response.data);
+  }
+
   addPicture(personId, file) {
     const formData = new FormData();
     formData.append('picture', file);

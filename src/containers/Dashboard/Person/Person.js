@@ -78,7 +78,7 @@ class Person extends Component {
 
     this.service = new Service();
     this.showMoreHandler = this.showMoreHandler.bind(this);
-    this.positionHandler = this.positionHandler.bind(this);
+    this.getPositionHandler = this.getPositionHandler.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.refreshData = this.refreshData.bind(this);
   }
@@ -93,15 +93,22 @@ class Person extends Component {
     this.setState({ [name]: value });
   }
 
-  positionHandler(coords) {
+  getPositionHandler(coords) {
     console.log(coords)
     const newPos = { lat: coords.latitude, lng: coords.longitude };
     const { geoReferences } = this.state.person.locations;
     geoReferences.push(newPos);
 
     this.setState({ geoReferences }, () => {
-      this.service.editPerson(this.props.match.params.personId, this.state.person.locations.geoReferences);
+      this.service.addPosition(this.props.match.params.personId, this.state.person.locations.geoReferences);
     })
+  }
+
+  saveEditToDatabase() {
+    const { personId } = this.props.match.params
+    const { person } = this.state
+    this.service.editPerson(personId, person)
+      .then(response => response.data)
   }
   
   refreshData() {
@@ -123,15 +130,15 @@ class Person extends Component {
         <Aux>
           <div>
             <h3>Documents</h3>
-            <Documents />
+            <Documents {...person.documents}/>
           </div>
           <div>
             <h3>Appearance</h3>
-            <Appearance />
+            <Appearance {...person.appearance}/>
           </div>
           <div>
             <h3>Health Condidition</h3>
-            <Health />
+            <Health {...person.health}/>
           </div>
         </Aux>
       )
@@ -149,7 +156,7 @@ class Person extends Component {
               { ...person.name }
               change={this.handleChange}/>
             <SecundaryInfo 
-              { ...person.name } { ...person.locations }
+              { ...person.name } { ...person.locations.ofBirth }
               change={this.handleChange} />
 
             <button 
@@ -164,10 +171,10 @@ class Person extends Component {
 
           <div className="controls">
             <SaveController 
-              savePerson={this.editHandler}/>
+              savePerson={this.savePerson}/>
             
             <PositionController
-              getPosition={this.positionHandler} />
+              getPosition={this.getPositionHandler} />
             
             <SendPicture 
               personId={this.props.match.params.personId}
