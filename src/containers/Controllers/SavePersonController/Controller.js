@@ -1,21 +1,17 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Axios from 'axios';
 
-class SavePersonEdit extends Component {
-  constructor(props) {
-    super(props)
-  }
+const savePersonEdit = (props) => {
 
-  render() {
     
     return (
       <button 
         className="Controller"
-        onClick={this.saveEditToDatabase}>
+        onClick={this.props.savePerson}>
         <img src="/img/icons/cloud-computing.png" />
       </button>
     )
-  }
 }
 
-export default SavePersonEdit;
+
+export default savePersonEdit;
