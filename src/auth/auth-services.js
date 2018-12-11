@@ -9,15 +9,15 @@ class AuthService {
     this.service = service;
   }
 
-  // login (username, password) {
-  //   return this.service.post('/login', {username, password})
-  //   .then(response => response.data)
-  // }
+  login(user) {
+    return this.service.post('/auth', user)
+      .then(response => response.data);
+  }
 
-  // logout = () => {
-  //   return this.service.post('/logout', {})
-  //   .then(response => response.data)
-  // }
+  logout() {
+    return this.service.get('users/logout', {})
+      .then(response => response.data);
+  }
 
   loggedin() {
     return this.service.get('/users/loggedin')

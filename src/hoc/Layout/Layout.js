@@ -23,10 +23,12 @@ class Layout extends Component {
     return (
       <Aux>
         <Nav 
-          showMenu={this.show} />
+          showMenu={this.show} user = {this.props.user} />
         <Menu
-          showMenu={this.show}
-          show={this.state.show} />
+          showMenu = {this.show}
+          show = {this.state.show}
+          user = {this.props.user} 
+          resetState ={this.props.resetState} />
         <Backdrop
           show={this.state.show}
           showBackdrop={this.show} /> 
