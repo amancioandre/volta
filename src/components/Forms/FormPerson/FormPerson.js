@@ -22,7 +22,8 @@ class FormPerson extends Component {
   constructor(props){
     super(props);
     this.state = {
-
+      lat: 0,
+      lng: 0,
     };
     this.service = new CrudServices();
     this.handleChange = this.handleChange.bind(this);

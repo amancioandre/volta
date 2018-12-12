@@ -35,7 +35,6 @@ class Person extends Component {
         address: 'Al. Jaú, 1301',
         state: 'São Paulo',
         zip: 1420001,
-        geoReferences: [{ lat: 0, lng: 0 }],
         profession: 'Ironhacker',
         degree: 'Non-alphabetized',
         maritalStatus: 'maried',
@@ -58,6 +57,7 @@ class Person extends Component {
         birthCertificate: 12346579,
         professionalLicense: 123465798,
       },
+      geoReferences: [{ lat: 0, lng: 0 }],
     refresh: true,
     };
 
@@ -138,7 +138,10 @@ class Person extends Component {
           birthCertificate: person.documents.birthCertificate || '',
           professionalLicense: person.documents.professionalLicense || '',
           };
-        this.setState({ person: newPerson });
+          console.log(newPerson);
+          
+          this.setState({ person: newPerson });
+          console.log(this.state.person);
       });
   }
 
