@@ -38,10 +38,10 @@ const navigationalItems = (props) => {
 
           <li>About</li>
           <li>
-          <Link to='/' onClick={clickHandler}>
+            <Link to='/' onClick={clickHandler}>
               Logout 
             </Link>
-            </li>
+          </li>
         </ul>
       </div>
     )
@@ -51,16 +51,16 @@ const navigationalItems = (props) => {
     <ul>
       <li>
         <Link to='/login'>
-          Login
+          <img src="/img/icons/home.png" /> Login
         </Link>
       </li>
      
       <li>
         <Link to='/signup'>
-          Signup
+          <img src="/img/icons/pen.png" /> Signup
         </Link>
       </li>
-      <li>About</li>
+      {/* <li>About</li> */}
     </ul>
   </div>)
   }

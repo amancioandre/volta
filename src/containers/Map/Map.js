@@ -33,8 +33,10 @@ class MapComponent extends Component {
   render() {
     let pos;
     let zoom;
-    console.log("$$$$$$$$$",this.props);
-    this.props.geoReferences.length > 0 ? zoom = 18 : zoom = 2;
+    let test
+    console.log('PEOPLE --->', this.props.people)
+    this.props.geoReferences ? test = this.props.geoReferences : test = [];
+    test > 0 ? zoom = 18 : zoom = 2;
     
     let pins = this.props.people.map((person, i) => {
       
@@ -52,7 +54,7 @@ class MapComponent extends Component {
         id='mapid' 
         className={this.props.c} 
         center={this.props.geoReferences.length > 0 ? this.props.geoReferences[this.props.geoReferences.length-1]: { lat: 0, lng: 0} } 
-        zoom={zoom}>
+        zoom={12}>
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution="&copy; <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"

@@ -25,6 +25,7 @@ const peopleList = (props) => {
         </div>
       </div>
       {window.innerWidth > 899 ? <MapComponent 
+                                    geoReferences={[{lat: 0, lng: 0}]}
                                     c="map-wide" 
                                     people={props.people}/> : null}
     </Aux>
