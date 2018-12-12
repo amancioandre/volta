@@ -32,14 +32,14 @@ class MapComponent extends Component {
   /* Life Cycle Methods */
   render() {
     let pos;
-    let zoom;
+    let center;
     let test
-    console.log('PEOPLE --->', this.props.people)
-    this.props.geoReferences ? test = this.props.geoReferences : test = [];
-    test > 0 ? zoom = 18 : zoom = 2;
+
+    this.props.center ? center = this.props.center : undefined;
+    // this.props.geoReferences ? test = this.props.geoReferences : test = [];
     
-    let pins = this.props.people.map((person, i) => {
-      
+    console.log("maps person->", this.props.markers)
+    let pins = this.props.markers.map((person, i) => {
       person.geoReferences.length > 0 ? pos=person.geoReferences : pos = [{ lat: 0, lng: 0 }];
       return (<Marker 
           key={i}
@@ -53,8 +53,8 @@ class MapComponent extends Component {
       <Map 
         id='mapid' 
         className={this.props.c} 
-        center={this.props.geoReferences.length > 0 ? this.props.geoReferences[this.props.geoReferences.length-1]: { lat: 0, lng: 0} } 
-        zoom={12}>
+        center={center ? center : pos[pos.length-1] || { lat: 0, lng: 0} } 
+        zoom={this.props.zoom}>
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution="&copy; <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
