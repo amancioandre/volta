@@ -45,6 +45,7 @@ class Dashboard extends Component {
     this.service.getAll().then(response => {
       const people = response.map((person) => {
         const newPerson = {
+          _id: person._id,
           firstName: person.name.firstName,
           lastName: person.name.lastName,
           alias: person.name.alias,

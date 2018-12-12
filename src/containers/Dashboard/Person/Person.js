@@ -30,6 +30,7 @@ class Person extends Component {
         alias: 'Apelido',
         dateOfBirth: '13-01-1991',
         status: 'Vivo',
+        geoReferences: [{ lat: 0, lng: 0 }],
         sex: 'Masculino',
         city: 'São Paulo',
         address: 'Al. Jaú, 1301',
@@ -152,6 +153,7 @@ class Person extends Component {
 
   render() {
     const { person } = this.state;
+    console.log('PERSON -------->', person)
     const center = person.geoReferences[person.geoReferences.length-1];
 
     let moreInfo = (
@@ -220,7 +222,7 @@ class Person extends Component {
         </div>
         <MapComponent
           c='map-bottom'
-          zoom={2}
+          zoom={18}
           center={center}
           markers={[person]} />
       </Aux>
