@@ -13,6 +13,7 @@ import SignIn from './src/components/SignIn/SignIn';
 import FormPerson from './src/components/Forms/FormPerson/FormPerson';
 import AuthService from './src/auth/auth-services';
 import ProtectedRoute from './src/components/ProtectedRoutes/ProtectedRoutes'
+import About from './src/components/About/About';
 
 class app extends Component {
   constructor (props) {
@@ -62,6 +63,7 @@ class app extends Component {
       <BrowserRouter>
         <Layout user={this.state.loggedInUser} resetState={this.resetState}>
           <Switch>
+            <Route exact path="/about" component={About} />
             <Route exact path='/person' component={FormPerson} />
             <Route exact path='/' component={Landing} />
             <Route exact path='/signup'  render={() => <Signup getUser = { this.getTheUser }/>}/>
@@ -78,6 +80,7 @@ class app extends Component {
           <BrowserRouter>
             <Layout>
               <Switch>
+                <Route exact path="/about" component={About} />
                 <Route exact path='/person' component={FormPerson} />
                 <Route exact path='/' component={Landing} />
                 <Route exact path='/signup'  render={() => <Signup getUser = { this.getTheUser }/>}/>

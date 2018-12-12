@@ -28,6 +28,11 @@ class AuthService {
     return this.service.post('/users', { user })
       .then(response => response.data);
   }
+
+  editUser(user) {
+    return this.service.patch('/users', { user })
+      .then(response => response.data)
+  }
 }
 
 export default AuthService;

@@ -6,6 +6,7 @@ import FormPerson from "../../components/Forms/FormPerson/FormPerson";
 import PeopleList from "./PeopleList/PeopleList";
 import Person from "./Person/Person";
 import CrudServices from "../../crud/crud-services";
+import User from './User/User';
 
 import "./Dashboard.css";
 
@@ -108,6 +109,10 @@ class Dashboard extends Component {
           path="/dashboard/people-add"
           render={props => <FormPerson {...props} />}
         />
+        <Route
+          exact
+          path="/dashboard/profile"
+          render={props => <User {...props} />} />
       </Aux>
     );
   }
