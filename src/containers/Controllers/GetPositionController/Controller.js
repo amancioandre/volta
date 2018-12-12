@@ -11,9 +11,14 @@ class PositionController extends Component {
 
   /* Controller Methods */
   getPosition() {
+    const options = {
+      enableHighAccuracy: true,
+      timeout: 5000,
+      maximumAge: 0
+    }
     navigator.geolocation.getCurrentPosition((pos) => {
       this.props.getPosition(pos.coords);
-    });
+    }, err, options);
   }
   
   /* Lifecycle Methods */

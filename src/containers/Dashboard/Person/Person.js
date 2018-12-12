@@ -149,6 +149,7 @@ class Person extends Component {
 
   render() {
     const { person } = this.state;
+    const center = person.geoReferences[person.geoReferences.length-1];
 
     let moreInfo = (
       <Aux>
@@ -216,8 +217,9 @@ class Person extends Component {
         </div>
         <MapComponent
           c='map-bottom'
-          geoReferences={person.geoReferences}
-          people={[person]} />
+          zoom={2}
+          center={center}
+          markers={[person]} />
       </Aux>
     )
   }

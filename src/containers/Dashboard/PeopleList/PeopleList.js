@@ -7,11 +7,26 @@ import Search from "../../../components/Search/Search";
 
 import "./People.css";
 
+
+let center;
+const options = {
+  enableHighAccuracy: true,
+  timeout: 5000,
+  maximumAge: 0
+}
+navigator.geolocation.getCurrentPosition((pos) => {
+  const lat = pos.coords.latitude;
+  const lng = pos.coords.longitude;
+
+  center = { lat, lng };
+}, () => console.log('err'), options);
+
 const peopleList = (props) => {
 
   const PeopleCards = props.people.map((person, i) => {
     return <Card key={i} {...person} />;
   });
+
 
   return (
     <Aux>
@@ -24,10 +39,11 @@ const peopleList = (props) => {
           <CreatePerson />
         </div>
       </div>
-      {window.innerWidth > 899 ? <MapComponent 
-                                    geoReferences={[{lat: 0, lng: 0}]}
-                                    c="map-wide" 
-                                    people={props.people}/> : null}
+      <MapComponent
+        c='map-wide'
+        zoom={12}
+        center={center}
+        markers={props.people} />
     </Aux>
   );
 }

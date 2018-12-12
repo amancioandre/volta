@@ -42,10 +42,44 @@ class Dashboard extends Component {
   }
 
   refreshData() {
-    console.log('refresh data')
-    let people = [];
     this.service.getAll().then(response => {
-      people = response;
+      const people = response.map((person) => {
+        const newPerson = {
+          firstName: person.name.firstName,
+          lastName: person.name.lastName,
+          alias: person.name.alias,
+          dateOfBirth: person.dateOfBirth,
+          status: person.status,
+          sex: person.sex,
+          city: person.locations.ofBirth.city,
+          address: person.locations.ofBirth.address,
+          state: person.locations.ofBirth.state,
+          zip: person.locations.ofBirth.zip,
+          geoReferences: person.locations.geoReferences || [{ lat: 0, lng: 0 }],
+          profession: person.background.profession,
+          degree: person.background.degree,
+          maritalStatus: person.background.maritalStatus,
+          picName: person.picture.picName,
+          picPath: person.picture.picPath,
+          bodyType: person.appearance.bodyType,
+          eyeColor: person.appearance.eyeColor,
+          skinColor: person.appearance.skinColor,
+          hairType: person.appearance.hairType,
+          height: person.appearance.height,
+          weight: person.appearance.weight,
+          tattoos: person.appearance.tattoos,
+          drugs: person.health.drugs,
+          amputhee: person.health.amputhee,
+          mental: person.health.mental,
+          diseases: person.health.diseases,
+          registry: person.documents.registry,
+          economicReg: person.documents.economicReg,
+          driverLicense: person.documents.driverLicense,
+          birthCertificate: person.documents.birthCertificate,
+          professionalLicense: person.documents.professionalLicense,
+          };
+          return newPerson;
+      });
       this.setState({ People: people });
       console.log('refreshData ->>', people)
     });
