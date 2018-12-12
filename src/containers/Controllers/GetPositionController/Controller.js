@@ -18,7 +18,7 @@ class PositionController extends Component {
     }
     navigator.geolocation.getCurrentPosition((pos) => {
       this.props.getPosition(pos.coords);
-    }, err, options);
+    }, () => console.log('erro'), options);
   }
   
   /* Lifecycle Methods */
