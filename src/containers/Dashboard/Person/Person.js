@@ -93,9 +93,9 @@ class Person extends Component {
   }
 
   saveEdit() {
-    console.log('saveEdit', this.props.match.params)
     const { personId } = this.props.match.params
     const { person } = this.state
+
     this.service.editPerson(personId, person)
       .then(response => response.data)
   }
