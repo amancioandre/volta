@@ -21,8 +21,9 @@ class FormPerson extends Component {
 
   constructor(props){
     super(props);
-    this.state = {
-      geoReferences: [{ lat: 0, lng: 0 }],
+    this.state ={ person:{
+        geoReferences: [{ lat: 0, lng: 0 }],
+      }
     };
     this.service = new CrudServices();
     this.handleChange = this.handleChange.bind(this);
@@ -33,7 +34,7 @@ class FormPerson extends Component {
 
   handleCreatePerson(event) {
     event.preventDefault();
-    const person = this.state;
+    const person = this.person.state;
     console.log(person);
     this.service
       .createPerson(person)
@@ -53,12 +54,12 @@ class FormPerson extends Component {
 
   getPositionHandler(coords) {
     const newPos = { lat: coords.latitude, lng: coords.longitude };
-    console.log('this.state --------> ', this.state);
-    const { geoReferences } = this.state;
+    console.log('this.state --------> ', this.person.state);
+    const { geoReferences } = this.person.state;
     geoReferences.push(newPos);
 
     this.setState({ geoReferences }, () => {
-      this.service.addPosition(this.props.match.params.personId, this.state.geoReferences)
+      this.service.addPosition(this.props.match.params.personId, this.preson.state.geoReferences)
         .then(res => (console.log('Result------->', res)));
     })
   }
@@ -66,7 +67,7 @@ class FormPerson extends Component {
   handleChange (event) {  
     const {name, value} = event.target;
     this.setState({[name]: value});
-    console.log(this.state);
+    console.log(this.person.state);
   }
 
   componentDidMount() {
@@ -77,12 +78,12 @@ class FormPerson extends Component {
     console.log(this.state);
     return(
       <Form onSubmit= {this.handleCreatePerson}>
-        <PrimaryInfo state = { this.state } change = { this.handleChange }/>
-        <SecundaryInfo state = { this.state } change = { this.handleChange }/>
-        <Background state = { this.state } change = { this.handleChange }/>
-        <Appearance state = { this.state } change = { this.handleChange }/>
-        <Health state = { this.state } change = { this.handleChange }/>
-        <Documents state = { this.state } change = { this.handleChange }/>
+        <PrimaryInfo state = { this.person.state } change = { this.handleChange }/>
+        <SecundaryInfo state = { this.person.state } change = { this.handleChange }/>
+        <Background state = { this.person.state } change = { this.handleChange }/>
+        <Appearance state = { this.person.state } change = { this.handleChange }/>
+        <Health state = { this.person.state } change = { this.handleChange }/>
+        <Documents state = { this.person.state } change = { this.handleChange }/>
         <SubmitButton buttonName = 'Create'/>
       </Form>
     )
