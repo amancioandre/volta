@@ -41,7 +41,6 @@ class MapComponent extends Component {
     console.log("maps person->", this.props.markers)
     let pins = this.props.markers.map((person, i) => {
       person.geoReferences.length > 0 ? pos=person.geoReferences : pos = [{ lat: 0, lng: 0 }];
-
       return (<Marker 
           key={i}
           icon={pos[pos.length-1].lat === 0 && pos[pos.length-1].lng === 0 ? this.icons.unknown : this.icons.registeredPeople}
