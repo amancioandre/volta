@@ -217,6 +217,7 @@ class Person extends Component {
               getPosition={this.getPositionHandler} />
 
             <SendPicture
+              refresh={this.refreshData}
               personId={this.props.match.params.personId} />
           </div>
         </div>
