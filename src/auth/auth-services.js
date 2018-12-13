@@ -29,7 +29,7 @@ class AuthService {
       .then(response => response.data);
   }
 
-  editUser(user) {
+  editUser(userId, user) {
     return this.service.patch('/users', { user })
       .then(response => response.data)
   }
