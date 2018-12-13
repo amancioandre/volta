@@ -83,7 +83,7 @@ class Landing extends Component {
             <h1>Volta</h1>
 
             <h4>{item.text}</h4>
-            <div>
+            <div className="Buttons">
               <button><Link to='/signup'>Sign in</Link></button>
               <button><Link to='/login'>Login</Link></button>
             </div>

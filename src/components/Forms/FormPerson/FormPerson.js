@@ -12,6 +12,8 @@ import CrudServices from "../../../crud/crud-services";
 
 import { withRouter } from "react-router-dom";
 
+import './FormPerson.css';
+
 // CSS
 // import './FormSignUp.css';
 
@@ -73,15 +75,17 @@ class FormPerson extends Component {
 
   render() {
     return (
-      <Form onSubmit={this.handleCreatePerson}>
-        <PrimaryInfo state={this.state} change={this.handleChange} />
-        <SecundaryInfo state={this.state} change={this.handleChange} />
-        <Background state={this.state} change={this.handleChange} />
-        <Appearance state={this.state} change={this.handleChange} />
-        <Health state={this.state} change={this.handleChange} />
-        <Documents state={this.state} change={this.handleChange} />
-        <SubmitButton buttonName="Create" />
-      </Form>
+      <div className="FormPerson">
+        <Form onSubmit={this.handleCreatePerson}>
+          <PrimaryInfo state={this.state} change={this.handleChange} />
+          <SecundaryInfo state={this.state} change={this.handleChange} />
+          <Background state={this.state} change={this.handleChange} />
+          <Appearance state={this.state} change={this.handleChange} />
+          <Health state={this.state} change={this.handleChange} />
+          <Documents state={this.state} change={this.handleChange} />
+          <SubmitButton buttonName="Create" />
+        </Form>
+      </div>
     );
   }
 }

@@ -5,7 +5,7 @@ const savePersonEdit = (props) => {
     <button 
       className="Controller"
       onClick={props.savePerson}>
-      <img src="/img/icons/cloud-computing.png" />
+      <i class="fa fa-floppy-o" aria-hidden="true"></i>
     </button>
   )
 }

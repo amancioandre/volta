@@ -5,6 +5,7 @@
   box-sizing: border-box;
   display: flex;
   flex-flow: column wrap;
+  background-color: rgba(246, 244, 243, 1);
 }
 
 .Person .picture {
@@ -54,7 +55,8 @@
   flex-flow: row;
   justify-content: space-evenly;
   box-sizing: border-box;
-  background-color: white;
+  border-bottom: 2px solid rgba(246, 244, 243, 1);
+  background-color: rgba(18, 148, 144, 1);
   box-shadow: 0px -2px 6px #464C55;
   z-index: 30;
 }

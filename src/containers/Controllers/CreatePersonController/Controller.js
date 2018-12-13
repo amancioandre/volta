@@ -12,7 +12,7 @@ class CreatePerson extends Component {
       <Link 
         className='Controller CreatePerson'
         to='/dashboard/people-add' >
-        <img src="/img/icons/add-user.png" />
+        <i class="fa fa-user-plus" aria-hidden="true"></i>
       </Link>
     )
   }

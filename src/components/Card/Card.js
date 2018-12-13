@@ -8,7 +8,7 @@ import './Card.css';
 
   const AjustDate = (dateBd) => {
     let date = new Date (dateBd);
-    return `${date.getDate()}/${date.getMonth()}/${date.getYear()}`
+    return `${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`
   }
     return (
     <Link to={{

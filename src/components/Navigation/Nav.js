@@ -11,8 +11,8 @@ class Nav extends Component {
     return (
       <nav className="Nav">
         <img src="/img/logo_placeholder.png" />
-        <div>
-          <img src="/img/icons/menu.png" onClick={this.props.showMenu} />
+        <div onClick={this.props.showMenu}>
+          <i class="fa fa-bars" aria-hidden="true"></i>
         </div>      
       </nav>
     )

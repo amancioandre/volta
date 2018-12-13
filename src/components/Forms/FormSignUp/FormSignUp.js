@@ -51,7 +51,7 @@ class FormSignUp extends Component {
       <Form onSubmit= {this.handleFormSubmit}>
         <PrimaryInfo state={this.state} change={this.handleChange} />
         <UserInfo signup={true} state={this.state} change={this.handleChange} />
-        <SubmitButton buttonName="SignUp" />
+        <SubmitButton buttonName="SIGN UP" />
       </Form>
     );
   }

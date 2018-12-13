@@ -58,7 +58,7 @@ class SendPicture extends Component {
             }
           }}
           className="Controller">
-          <img src="/img/icons/photo-camera.png" />
+          <i className="fa fa-camera-retro" aria-hidden="true"></i>
         </button>
       </Aux>
     )
