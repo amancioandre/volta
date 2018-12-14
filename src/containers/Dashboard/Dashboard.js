@@ -145,7 +145,7 @@ class Dashboard extends Component {
         <Route
           exact
           path="/dashboard/people-add"
-          render={props => <FormPerson {...props} />}
+          render={props => <FormPerson user={this.props.loggedInUser} {...props} />}
         />
         <Route
           exact

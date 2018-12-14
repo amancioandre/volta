@@ -31,17 +31,13 @@ class FormPerson extends Component {
   handleCreatePerson(event) {
     event.preventDefault();
     const person = this.state;
+    const id = this.props.user._id;
+    console.log(this.props.user._id);
     console.log(this.state);
     this.service
-      .createPerson(person)
+      .createPerson(person, id)
       .then(response => {
         this.setState({});
-        this.service
-          .addPosition(
-            this.props.match.params.personId,
-            this.state.geoReferences
-          )
-          .then(res => console.log("Result------->", res));
       })
       .catch(error => console.log(error));
   }

@@ -56,7 +56,6 @@ class app extends Component {
 
   render() {
     this.fetchUser()
-    console.log('^^^^^^^', this.state.loggedInUser);
     if(this.state.loggedInUser){
     return(
     <Aux>
