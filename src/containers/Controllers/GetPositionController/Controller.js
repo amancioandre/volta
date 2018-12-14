@@ -28,7 +28,7 @@ class PositionController extends Component {
       <button 
         className='Controller'
         onClick={this.getPosition}>
-        <img src="/img/icons/pin_purple.png" />
+        <i class="fa fa-map-marker" aria-hidden="true"></i>
       </button>
     )
   }

@@ -22,24 +22,28 @@ const navigationalItems = (props) => {
         <ul>
           <li>
             <Link to='/dashboard/people'>
-              <img src="/img/icons/registers.png" /> My registers
+              <i class="fa fa-address-book-o" aria-hidden="true"></i> My registers
             </Link>
           </li>
           <li>
             <Link to='/dashboard/missing'>
-              <img src="/img/icons/missing.png" /> Missing
+              <i class="fa fa-users" aria-hidden="true"></i> Missing
             </Link>
           </li>
           <li>
             <Link to='/dashboard/profile'>
-              <img src="/img/icons/profile.png" />{props.user.name.firstName}'s Profile
+              <i class="fa fa-address-card" aria-hidden="true"></i> {props.user.name.firstName}'s Profile
             </Link>
           </li>
 
-          <li>About</li>
+          <li>
+            <Link to='/about'>
+            <i class="fa fa-sticky-note-o" aria-hidden="true"></i> About
+            </Link>
+          </li>
           <li>
             <Link to='/' onClick={clickHandler}>
-              Logout 
+              <i class="fa fa-sign-out" aria-hidden="true"></i> Logout 
             </Link>
           </li>
         </ul>
@@ -51,13 +55,13 @@ const navigationalItems = (props) => {
     <ul>
       <li>
         <Link to='/login'>
-          <img src="/img/icons/home.png" /> Login
+          <i class="fa fa-sign-in" aria-hidden="true"></i> Login
         </Link>
       </li>
      
       <li>
         <Link to='/signup'>
-          <img src="/img/icons/pen.png" /> Signup
+          <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Signup
         </Link>
       </li>
       {/* <li>About</li> */}

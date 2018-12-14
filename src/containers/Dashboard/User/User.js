@@ -26,18 +26,6 @@ class User extends Component {
     this.service = new AuthService;
     this.refreshData = this.refreshData.bind(this);
   }
-  handleFormSubmit(event) {
-    event.preventDefault();
-    const user = this.state;
-    console.log(user);
-    this.service
-      .signup(user)
-      .then(response => {
-        this.setState({});
-        this.props.getUser(response);
-      })
-      .catch(error => console.log(error));
-  }
 
   handleChange(event) {
     const { name, value } = event.target;

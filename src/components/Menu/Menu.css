@@ -6,7 +6,7 @@
   padding: 15px;
   min-width: 200px;
   min-height: 200px;
-  background-color: white;
+  background-color: rgba(246, 244, 243, 1);
   border: 1px solid #464C55;
   z-index: 36;
   transition: all 0.3s ease-in;

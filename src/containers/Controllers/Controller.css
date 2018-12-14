@@ -3,9 +3,9 @@
   margin: 0 5px;
   min-width: 60px;
   min-height: 60px;
-  border-radius: 50%;
-  border: 2px solid #464C55;;
-  background-color: #F8BC14;
+  border-radius: 5px;
+  border: none;
+  background-color: transparent;
   outline: none;
   text-transform: uppercase;
   font-weight: 800;
@@ -22,4 +22,9 @@
   position: relative;
   top: 12.5px;
   left: 12.5px;
+}
+
+.Controller i {
+  font-size: 2rem;
+  color: rgba(246, 244, 243, 1);
 }

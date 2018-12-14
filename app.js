@@ -62,7 +62,7 @@ class app extends Component {
       <BrowserRouter>
         <Layout user={this.state.loggedInUser} resetState={this.resetState}>
           <Switch>
-            <Route exact path="/about" component={About} />
+            {/* <Route exact path="/about" component={About} /> */}
             <Route exact path='/person' component={FormPerson} />
             <Route exact path='/' component={Landing} />
             <Route exact path='/signup'  render={() => <Signup getUser = { this.getTheUser }/>}/>

@@ -22,7 +22,7 @@ class DeletePerson extends Component {
         <button 
           className='Controller'
           onClick={this.deletePersonHandler}>
-          <img src="/img/icons/delete.png" />
+          <i class="fa fa-user-times" aria-hidden="true"></i>
         </button>
       </Link>
     )
