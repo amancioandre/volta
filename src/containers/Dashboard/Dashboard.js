@@ -76,7 +76,6 @@ class Dashboard extends Component {
           return newPerson;
       });
       this.setState({ People: people });
-      console.log('refreshData ->>', people)
     });
   }
 
@@ -121,7 +120,6 @@ class Dashboard extends Component {
           return newPerson;
       });
       this.setState({ People: people });
-      console.log('refreshData ->>', people)
     });
   }
 

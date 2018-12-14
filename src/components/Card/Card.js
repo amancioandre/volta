@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import './Card.css';
   
   const Card = (props) => {
-  console.log('cards --------->', props)
 
   const AjustDate = (dateBd) => {
     let date = new Date (dateBd);
@@ -24,8 +23,8 @@ import './Card.css';
           <p>{ props.lastName }</p>
           <h3>Date of birth:</h3>
           <p>{ AjustDate(props.dateOfBirth) }</p>
-          <h3>Last update</h3>
-          <p>{ AjustDate(props.Updated_at) }</p>
+          {/* <h3>Last update</h3>
+          <p>{ AjustDate(props.Updated_at) }</p> */}
         </div>
       </div>
     </Link>

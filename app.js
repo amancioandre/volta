@@ -26,7 +26,6 @@ class app extends Component {
 
   resetState(){
     this.setState({ loggedInUser: null }, () => {
-      console.log(this.state);
     });
 
   }

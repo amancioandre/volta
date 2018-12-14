@@ -27,7 +27,6 @@ class FormSignIn extends Component {
   handleFormSubmit(event) {
     event.preventDefault();
     const user = this.state;
-    console.log(user);
     this.service
       .login(user)
       .then(response => {

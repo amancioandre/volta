@@ -139,10 +139,8 @@ class Person extends Component {
           birthCertificate: person.documents.birthCertificate || '',
           professionalLicense: person.documents.professionalLicense || '',
           };
-          console.log(newPerson);
           
           this.setState({ person: newPerson });
-          console.log(this.state.person);
       });
   }
 
@@ -153,7 +151,6 @@ class Person extends Component {
 
   render() {
     const { person } = this.state;
-    console.log('PERSON -------->', person)
     const center = person.geoReferences[person.geoReferences.length-1];
 
     let moreInfo = (

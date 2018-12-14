@@ -10,12 +10,10 @@ const service = new AuthServices();
 const navigationalItems = (props) => {
  
   const clickHandler = () => {
-    console.log('@@@@');
     service.logout();
     props.resetState();
   };
 
-  console.log('@@@@@',props.user);
   if(props.user){
     return (
       <div className="NavigationalItems">

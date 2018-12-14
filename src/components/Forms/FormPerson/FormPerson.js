@@ -34,8 +34,7 @@ class FormPerson extends Component {
     event.preventDefault();
     const person = this.state;
     const id = this.props.user._id;
-    console.log(this.props.user._id);
-    console.log(this.state);
+
     this.service
       .createPerson(person, id)
       .then(response => {
@@ -47,14 +46,12 @@ class FormPerson extends Component {
   getPosition() {
     navigator.geolocation.getCurrentPosition(pos => {
       let { coords } = pos;
-      console.log("Pos -------->", coords);
       this.getPositionHandler(coords);
     });
   }
 
   getPositionHandler(coords) {
     const newPos = { lat: coords.latitude, lng: coords.longitude };
-    console.log("this.state --------> ", this.state);
     const { geoReferences } = this.state;
     geoReferences.push(newPos);
   }
@@ -62,7 +59,6 @@ class FormPerson extends Component {
   handleChange(event) {
     const { name, value } = event.target;
     this.setState({ [name]: value });
-    console.log(this.state);
   }
 
   componentDidMount() {

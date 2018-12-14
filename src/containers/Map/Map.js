@@ -38,7 +38,6 @@ class MapComponent extends Component {
     this.props.center ? center = this.props.center : undefined;
     // this.props.geoReferences ? test = this.props.geoReferences : test = [];
     
-    console.log("maps person->", this.props.markers)
     let pins = this.props.markers.map((person, i) => {
       person.geoReferences.length > 0 ? pos=person.geoReferences : pos = [{ lat: 0, lng: 0 }];
       return (<Marker 
