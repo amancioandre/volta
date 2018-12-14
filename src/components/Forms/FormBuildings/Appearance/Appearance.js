@@ -1,6 +1,6 @@
 import React from "react";
 import Aux from "../../../../hoc/Aux/Aux";
-import { Form, FormGroup, Label, Input, FormFeedback, FormText } from 'reactstrap';
+import { FormGroup, Label, Input } from 'reactstrap';
 
 // CSS
 
