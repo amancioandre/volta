@@ -1,0 +1,14 @@
+form {
+  padding-top: 80px;
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  background-color: rgba(246, 244, 243, 1);
+}
+
+form input {
+  width: 90%;
+}

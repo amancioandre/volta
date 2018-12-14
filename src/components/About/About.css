@@ -1,0 +1,64 @@
+.About {
+  margin: 60px 0;
+  width: 100%;
+  padding: 0;
+}
+
+.About h1, .About h2,
+.About h3, .About h5,
+.About p {
+  width: 100%;
+  padding: 10px 60px;
+  text-align: center;
+}
+
+.About h1 {
+  font-size: 2rem;
+}
+
+.About h2 {
+  font-size: 1.2rem;
+}
+
+.About p {
+  font-size: 1.0rem;
+}
+
+.About h5 {
+  margin: 60px 0;
+  text-align: center;
+}
+
+.About .main-info {
+  width: 100%;
+  padding: 20px 0;
+  height: 95vh;
+  background-color: yellow;
+}
+
+.About a,
+.About a:hover,
+.About a:visited,
+.About p {
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
+
+}
+
+.About .secondary-info {
+  width: 100%;
+  height: 100vh;
+  padding: 40px 0;
+}
+
+
+.About .poem * {
+  padding: 0 20px;
+}
+
+.About .video {
+  margin: 0 auto;
+  width: 560px;
+  min-height: 315px;
+}

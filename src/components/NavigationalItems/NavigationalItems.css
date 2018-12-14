@@ -1,0 +1,26 @@
+.NavigationalItems {
+  font-size: 1.2rem;
+}
+
+/* @media (min-width: 900px) {
+  .NavigationalItems ul {
+    display: flex;
+    flex-flow: row wrap;
+    list-style-type: none;
+  }
+
+  .NavigationalItems ul li {
+    margin: 0 15px;
+  }
+
+  .NavigationalItems img {
+    display: none;
+  }
+
+  .NavigationalItems a,
+  .NavigationalItems a:hover,
+  .NavigationalItems a:visited {
+    text-decoration: none;
+    color: black;
+  }
+} */
